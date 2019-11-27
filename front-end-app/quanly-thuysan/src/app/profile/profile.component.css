@@ -1,0 +1,42 @@
+::ng-deep .mat-horizontal-stepper-header-container {
+  pointer-events: none !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.container > * {
+  align-self: center;
+}
+
+h4 {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+span {
+  margin-left: auto;
+}
+
+.container1 {
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+}
+
+.title {
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 1;
+  padding: 0 100px 50px 100px;
+}
+
+#ul {
+  background-color: #ffffff;
+  text-decoration: none;
+}
+
+#ul > mat-list-item {
+  margin: 20px;
+}

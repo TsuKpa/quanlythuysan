@@ -1,0 +1,121 @@
+<div class="container">
+  <div class="title">
+    <h4>Các giai đoạn truy xuất nguồn gốc đang thực hiện</h4>
+  </div>
+
+  <div class="stepper">
+    <mat-horizontal-stepper labelPosition="bottom" #stepper>
+      <mat-step label="Giai Đoạn Nuôi Con Giống" [editable]="false" [completed]="true"></mat-step>
+      <mat-step label="Giai Đoạn Nuôi Nguyên Liệu" [editable]="false" [completed]="true"></mat-step>
+      <mat-step label="Giai Đoạn Chế Biến" [editable]="false" [completed]="true"></mat-step>
+      <mat-step label="Giai Đoạn Phân Phối" [editable]="false" [completed]="true"></mat-step>
+      <mat-step label="Giai Đoạn Bán Lẻ" [editable]="false"></mat-step>
+      <mat-step label="Hoàn Tất" [editable]="false"></mat-step>
+    </mat-horizontal-stepper>
+  </div>
+
+  <div class="gd">
+    <h4>Giai đoạn bán lẻ</h4>
+  </div>
+
+
+  <mat-progress-spinner color="primary"
+                        mode="indeterminate" *ngIf="isLoading">
+  </mat-progress-spinner>
+  <div class="form">
+    <div [hidden]="submitted">
+      <form (ngSubmit)="onSubmit()" class="myform" #ngForm="ngForm">
+
+        <mat-label>ID: <strong>{{idNG}}</strong></mat-label>
+        <table>
+          <tr>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <mat-select placeholder="Nguyên Liệu" [ngModel]="banle.nguyenlieu"
+                              class="form-control" [disabled]="true"
+                              [ngModelOptions]="{standalone: true}">
+                    <mat-option *ngIf="nl" [value]="banle.nguyenlieu">{{nl.tennguyenlieu}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <span>Thông tin nhận sản phẩm</span>
+        <table>
+          <tr>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="number" placeholder="Số lượng nhận (kg)"
+                         required
+                         min="0" name="soluong" [(ngModel)]="banle.soluongnhan">
+                </mat-form-field>
+              </div>
+            </td>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput [matDatepicker]="picker2" placeholder="Thời gian nhận"
+                         [(ngModel)]="banle.tgnhan" class="form-control" required
+                         [ngModelOptions]="{standalone: true}">
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Mã số lô nhận"
+                         [(ngModel)]="banle.masolonhan" class="form-control" required
+                         [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+            </td>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Tên người giao"
+                         [(ngModel)]="banle.tennguoigiao" class="form-control" required
+                         [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Phân loại"
+                         [(ngModel)]="banle.phanloai" class="form-control" required
+                         [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+            </td>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Mã sản phẩm"
+                         [(ngModel)]="id" class="form-control" required
+                         [disabled]="true" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+
+        <button mat-raised-button type="submit" color="primary" class="btn"
+                [disabled]="!ngForm.valid">Submit
+        </button>
+      </form>
+
+    </div>
+  </div>
+</div>
+

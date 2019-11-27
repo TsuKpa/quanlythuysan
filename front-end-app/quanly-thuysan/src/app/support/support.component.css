@@ -1,0 +1,43 @@
+.container {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  background-color: #ecfcff;
+}
+
+.container > div {
+  text-align: left;
+}
+
+.container > img {
+  max-width: 400px;
+  max-height: available;
+}
+
+.question {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  color: #14868c;
+  font-weight: bold;
+}
+
+.answer {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  margin-bottom: 300px;
+}
+
+.mat-expansion-panel-header-title {
+  font-family: 'Lato', sans-serif, Arial, Helvetica;
+  color: #14868c;
+  font-weight: bold;
+  font-size: 20px;
+}
+.mat-expansion-panel-body {
+  font-size: 18px !important;
+}
+
+@media screen and (max-width: 800px) {
+  .mat-expansion-panel-header-title {
+   font-size: 12px;
+  }
+}

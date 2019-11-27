@@ -1,0 +1,414 @@
+{
+  "$class": "org.hlfc.qlts.TaoSanPham",
+  "idSP": "sanpham1",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "ttng": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#tanvanng",
+  "ttnnl": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#haihiennl",
+  "ncb": "resource:org.hlfc.qlts.NhaCheBien#cbcongdanh",
+  "npp": "resource:org.hlfc.qlts.NhaPhanPhoi#ppnextfarm",
+  "nbl": "resource:org.hlfc.qlts.NhaBanLe#blninhkieu",
+  "mota": "Cá basa phi lê do VinMart cung cấp được sơ chế từ cá basa tươi ngon, theo quy trình khép kín, an toàn cho sức khỏe người tiêu dùng. Sản phẩm giúp bạn tiết kiệm thời gian chuẩn bị và nấu nướng.",
+  "title": "Cá basa phi lê VinMart ",
+  "hinhanh": "assets/resource/products/cabasa.jpg",
+  "status": "giaidoan_nuoigiong"
+}
+
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanNuoiGiong",
+  "idgdng": "gdng1",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham1",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham1",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "ao": "resource:org.hlfc.qlts.AoNG#aotv1",
+  "trangtrai": "resource:org.hlfc.qlts.TrangTraiNG#trangtraingtv",
+  "tgnuoi": "2019-10-06T09:00:39.376Z",
+  "tgxuatao": "2019-10-06T09:00:39.376Z",
+  "phuongtien": "resource:org.hlfc.qlts.PhuongTien#xetai1",
+  "trangtrainhan": "resource:org.hlfc.qlts.TrangTraiNNL#trangtrainlhh",
+  "soluong": 2000,
+  "mota": "Cá basa đã giao là những con giống khỏe mạnh, màu sắc tươi sáng. Cá có chiều dài thân 10-12cm. Nên thả cá ở mật độ từ 15-20 con/m2. Chú ý trước khi tiến hành thả cá, cần tắm cho cá tầm 5-6 phút với nước muối 2% để khử trùng. Nên thả từ từ, nhẹ nhàng để cá thích nghi dần với môi trường mới",
+  "trangtrainuoigiong": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#tanvanng"
+}
+
+
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanNuoiNguyenLieu",
+  "idgdnnl": "gdnnl1",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham1",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham1",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "ao": "resource:org.hlfc.qlts.AoNNL#aohh1",
+  "trangtrai": "resource:org.hlfc.qlts.TrangTraiNNL#trangtrainlhh",
+  "tgnhangiong": "2019-10-06T09:11:57.937Z",
+  "tgxuatao": "2019-10-06T09:11:57.937Z",
+  "phuongtien": "resource:org.hlfc.qlts.PhuongTien#xetai2",
+  "cscb": "resource:org.hlfc.qlts.CoSoCB#cscongdanh",
+  "soluong": 800,
+  "mota": "Thức ăn chính là cám gạo, rau xanh,... các nguyên liệu được xay nuhyễn, trộn đều cùng chất kết dính (bột gòn) . Mỗi ngày cá ăn 2 lần sáng và chiều tối. Cá được 10 tháng tuổi, trung bình mỗi con đạt  1- 1,5kg.",
+  "trangtrainuoinguyenlieu": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#haihiennl"
+}
+
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanCheBien",
+  "idgdcb": "gdcb1",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham1",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham1",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "cscb": "resource:org.hlfc.qlts.CoSoCB#cscongdanh",
+  "soluongnhan": 800,
+  "tgnhannl": "2019-10-06T09:16:02.206Z",
+  "masolonhan": "goihang1",
+  "tennguoinhan": "Trần Văn Bui",
+  "khoiluongcattiet": "800",
+  "khoiluongrua": "800",
+  "tgrua": "60p",
+  "tennguoirua": "Nguyễn Thị Anh Thư",
+  "nongdo": "500",
+  "nhietdo": "30",
+  "khoiluongsoche": "800",
+  "tgbdsoche": "15h30",
+  "tgktsoche": "16h45",
+  "tennguoisoche": "Nguyễn Hữu Lộc",
+  "nhietdocd": "-10",
+  "tgcapdong": "60p",
+  "tennguoicd": "Trần Việt Vị",
+  "tennccbb": "Công Ty Cổ Phần Bao bì Bình Minh",
+  "soluongbb": "800",
+  "loaibb": " túi PE/1kg",
+  "tennguoibg": "Trần Văn Từ",
+  "masanpham": "1111",
+  "nhietdobq": "0",
+  "tgxuat": "2019-10-06T09:16:02.206Z",
+"soluonggiao": "800",
+  "masologiao": "lohang2",
+  "diadiemgiao": "Cảng Cái Cui, TP Cần Thơ",
+  "phuongtien": "resource:org.hlfc.qlts.PhuongTien#xetai1",
+  "cspp": "resource:org.hlfc.qlts.CoSoPP#csnextfarm",
+  "tennguoivc": "Johny Deep",
+  "nhachebien": "resource:org.hlfc.qlts.NhaCheBien#cbcongdanh"
+}
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanPhanPhoi",
+  "idgdpp": "gdpp1",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham1",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham1",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "cspp": "resource:org.hlfc.qlts.CoSoPP#csnextfarm",
+  "soluongnhan": 800,
+  "tgnhan": "2019-10-06T09:26:45.552Z",
+  "masolonhan": "lohang2",
+  "tennguoinhan": "Võ Hoài Duy",
+  "phanloai": "1kg/con",
+  "diadiemnhan": "Cảng Cái Cui, TP Cần Thơ",
+  "masanpham": "1111",
+  "soluonggiao": 32,
+  "tggiao": "2019-10-06T09:26:45.552Z",
+  "masologiao": "lohang3",
+  "tennguoigiao": "Ronaldo",
+ "phuongtien": "resource:org.hlfc.qlts.PhuongTien#xetai1",
+  "csbl": "resource:org.hlfc.qlts.CoSoBL#csvmnk",
+  "nhaphanphoi": "resource:org.hlfc.qlts.NhaPhanPhoi#ppnextfarm"
+}
+
+
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanBanLe",
+  "idgdbl": "gdbl1",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham1",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham1",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "csbl": "resource:org.hlfc.qlts.CoSoBL#csvmnk",
+  "soluongnhan": 32,
+  "tgnhan": "2019-10-17T03:08:14.724Z",
+  "masolonhan": "lohang3",
+  "tennguoigiao": "Ronaldo",
+  "phanloai": "1kg/con",
+  "masanpham": "1144131232323",
+  "nhabanle": "resource:org.hlfc.qlts.NhaBanLe#blninhkieu"
+}
+------------------------------------------------------------------------
+
+{
+  "$class": "org.hlfc.qlts.TaoSanPham",
+  "idSP": "sanpham5",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cachimtrang",
+  "ttng": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#tuhaing",
+  "ttnnl": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#namnunl",
+  "ncb": "resource:org.hlfc.qlts.NhaCheBien#cbvietlong",
+  "npp": "resource:org.hlfc.qlts.NhaPhanPhoi#pprungbien",
+  "nbl": "resource:org.hlfc.qlts.NhaBanLe#blninhkieu",
+  "mota": "Cá chim không chỉ là một món ăn ngon mà còn là loại thực phẩm đặc biệt bổ dưỡng. Thịt cá rất chắc và thơm, là nguyên liệu cho nhiều món ăn ngon. ",
+  "title": "Cá chim trắng biển tươi VinMart" ,
+  "hinhanh": "assets/resource/products/cachim.jpg",
+  "status": "giaidoan_nuoigiong"
+}
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanNuoiGiong",
+  "idgdng": "gdng5",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham5",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham5",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cachimtrang",
+  "ao": "resource:org.hlfc.qlts.AoNG#aoth2",
+  "trangtrai": "resource:org.hlfc.qlts.TrangTraiNG#trangtraingth",
+  "tgnuoi": "2019-10-06T09:00:39.376Z",
+  "tgxuatao": "2019-10-06T09:00:39.376Z",
+  "phuongtien": "resource:org.hlfc.qlts.PhuongTien#xetai2",
+  "trangtrainhan": "resource:org.hlfc.qlts.TrangTraiNNL#trangtrainlnn",
+  "soluong": 5000,
+  "mota": "Cá có ngoại hình vây, vảy hoàn chỉnh, không bị dị hình, không bị mất nhớt và xây xát, cỡ cá đồng đều. Trạng thái hoạt động nhanh nhẹn bơi chìm và theo đàn. Cỡ cá giống thả có chiều dài 5-6cm, trọng lượng 15-20g/con.",
+  "trangtrainuoigiong": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#tuhaing"
+}
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanNuoiNguyenLieu",
+  "idgdnnl": "gdnnl5",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham5",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham5",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cachimtrang",
+  "ao": "resource:org.hlfc.qlts.AoNNL#aonn2",
+  "trangtrai": "resource:org.hlfc.qlts.TrangTraiNNL#trangtrainlnn",
+  "tgnhangiong": "2019-10-06T09:11:57.937Z",
+  "tgxuatao": "2019-10-06T09:11:57.937Z",
+  "phuongtien": "resource:org.hlfc.qlts.PhuongTien#xetai1",
+  "cscb": "resource:org.hlfc.qlts.CoSoCB#csvietlong",
+  "soluong": 3000,
+  "mota": "Thức ăn chính là bèo tấm, lá rau các loại,... các nguyên liệu được xay nhuyễn. Mỗi ngày cá ăn 2 lần sáng và chiều tối. Cá được 7 tháng tuổi, trung bình mỗi con đạt  1,2 - 2kg.",
+  "trangtrainuoinguyenlieu": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#namnunl"
+}
+
+
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanCheBien",
+  "idgdcb": "gdcb5",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham5",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham5",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cachimtrang",
+  "cscb": "resource:org.hlfc.qlts.CoSoCB#csvietlong",
+  "soluongnhan": 3000,
+  "tgnhannl": "2019-10-06T09:16:02.206Z",
+  "masolonhan": "goih1",
+  "tennguoinhan": "Trịnh Tiểu Lan",
+  "khoiluongcattiet": "3000",
+  "khoiluongrua": "3000",
+  "tgrua": "60p",
+  "tennguoirua": "Nguyễn Nhật Ánh",
+  "nongdo": "500",
+  "nhietdo": "30",
+  "khoiluongsoche": "3000",
+  "tgbdsoche": "10h30",
+  "tgktsoche": "10h45",
+  "tennguoisoche": "Ngô Ngọc An",
+  "nhietdocd": "-10",
+  "tgcapdong": "60p",
+  "tennguoicd": "Phạm Huy Hoàng",
+  "tennccbb": "Công Ty Cổ Phần Bao Bì Việt Hưng",
+  "soluongbb": "3000",
+  "loaibb": " túi PE/1kg",
+  "tennguoibg": "Trần Văn Từ",
+  "masanpham": "121212",
+  "nhietdobq": "0",
+  "tgxuat": "2019-10-06T09:16:02.206Z",
+"soluonggiao": "3000",
+  "masologiao": "lohang5",
+  "diadiemgiao": "Nguyễn Thị Định, Cát Lái, Quận 2, Hồ Chí Minh",
+  "phuongtien": "resource:org.hlfc.qlts.PhuongTien#xetai3",
+  "cspp": "resource:org.hlfc.qlts.CoSoPP#csrungbien",
+  "tennguoivc": "Frank Martin",
+  "nhachebien": "resource:org.hlfc.qlts.NhaCheBien#cbvietlong"
+}
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanPhanPhoi",
+  "idgdpp": "gdpp5",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham5",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham5",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cachimtrang",
+  "cspp": "resource:org.hlfc.qlts.CoSoPP#csrungbien",
+  "soluongnhan": 3000,
+  "tgnhan": "2019-10-06T09:26:45.552Z",
+  "masolonhan": "lohang3",
+  "tennguoinhan": "Võ Lan Tiểu",
+  "phanloai": "1,5kg/con",
+  "diadiemnhan": "Cảng Nhà Bè, Thành phố Hồ Chí Minh",
+  "masanpham": "2222",
+  "soluonggiao": 15,
+  "tggiao": "2019-10-06T09:26:45.552Z",
+  "masologiao": "loh3",
+  "tennguoigiao": "Kishimoto",
+ "phuongtien": "resource:org.hlfc.qlts.PhuongTien#xetai3",
+  "csbl": "resource:org.hlfc.qlts.CoSoBL#csvmnk",
+  "nhaphanphoi": "resource:org.hlfc.qlts.NhaPhanPhoi#pprungbien"
+}
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanBanLe",
+  "idgdbl": "gdbl5",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham5",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham5",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cachimtrang",
+  "csbl": "resource:org.hlfc.qlts.CoSoBL#csvmnk",
+  "soluongnhan": 15,
+  "tgnhan": "2019-10-17T03:08:14.724Z",
+  "masolonhan": "loh3313",
+  "tennguoigiao": "Danial Ishutin",
+  "phanloai": "1kg/con",
+  "masanpham": "11456772323",
+  "nhabanle": "resource:org.hlfc.qlts.NhaBanLe#blninhkieu"
+}
+
+
+-----------------------------------------------------------------------------
+{
+  "$class": "org.hlfc.qlts.TaoSanPham",
+  "idSP": "sanpham3",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "ttng": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#trangtrainuoigiong1",
+  "ttnnl": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#trangtrainguyenlieu1",
+  "ncb": "resource:org.hlfc.qlts.NhaCheBien#chebien1",
+  "npp": "resource:org.hlfc.qlts.NhaPhanPhoi#phanphoi1",
+  "nbl": "resource:org.hlfc.qlts.NhaBanLe#banle1",
+  "mota": "Basa phi lê Fillet Agifish được chế biến từ cá basa tươi ngon, theo quy trình khép kín, an toàn cho sức khỏe người tiêu dùng. Sản phẩm được sơ chế giúp bạn tiết kiệm tối đa thời gian nấu nướng. ",
+  "title": "Cá Basa Fillet Agifish" ,
+  "hinhanh": "assets/resource/products/cabasaCM.jpg",
+  "status": "giaidoan_nuoigiong"
+}
+
+
+
+{
+  "$class": "org.hlfc.qlts.TaoSanPham",
+  "idSP": "sanpham2",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cachem",
+  "ttng": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#trangtrainuoigiong1",
+  "ttnnl": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#trangtrainguyenlieu1",
+  "ncb": "resource:org.hlfc.qlts.NhaCheBien#chebien1",
+  "npp": "resource:org.hlfc.qlts.NhaPhanPhoi#phanphoi1",
+  "nbl": "resource:org.hlfc.qlts.NhaBanLe#banle1",
+  "mota": "Cá chẽm có giá trị kinh tế cao, giàu dinh dưỡng, thịt rất thơm ngon. Trong thịt cá cung cấp nhiều protein và lipit thiết yếu cho cơ thể, đặc biệt giàu omega 3 tốt cho sức khỏe của mắt và tim mạch. ",
+  "title": "Cá chẽm phi lê VinMart " ,
+  "hinhanh": "assets/resource/products/cachem.jpg",
+  "status": "giaidoan_nuoigiong"
+}
+
+
+
+{
+  "$class": "org.hlfc.qlts.TaoSanPham",
+  "idSP": "sanpham4",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cachep",
+  "ttng": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#trangtrainuoigiong1",
+  "ttnnl": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#trangtrainguyenlieu1",
+  "ncb": "resource:org.hlfc.qlts.NhaCheBien#chebien1",
+  "npp": "resource:org.hlfc.qlts.NhaPhanPhoi#phanphoi1",
+  "nbl": "resource:org.hlfc.qlts.NhaBanLe#banle1",
+  "mota": "Cá chép tươi được lấy từ nguồn thịt sạch, tươi ngon, sản xuất theo công nghệ hiện đại, mọi khâu từ tuyển chọn nguyên liệu tới chế biến, đóng bao bì đều diễn ra khép kín dưới sự giám sát và kiểm tra nghiêm ngặt. ",
+  "title": "Cá chép tươi VinMart" ,
+  "hinhanh": "assets/resource/products/cachep.jpg",
+  "status": "giaidoan_nuoigiong"
+}
+
+
+
+
+
+
+{
+  "$class": "org.hlfc.qlts.TaoSanPham",
+  "idSP": "sanpham6",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cadieuhong",
+  "ttng": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#trangtrainuoigiong1",
+  "ttnnl": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#trangtrainguyenlieu1",
+  "ncb": "resource:org.hlfc.qlts.NhaCheBien#chebien1",
+  "npp": "resource:org.hlfc.qlts.NhaPhanPhoi#phanphoi1",
+  "nbl": "resource:org.hlfc.qlts.NhaBanLe#banle1",
+  "mota": "Cá diêu hồng là loại cá giàu dinh dưỡng là thực phẩm rất tốt cho sức khỏe. Các món ăn chế biến từ Cá diêu hồng thơm ngon đặc trưng và dễ ăn, cách chế biến cũng dễ dàng.",
+  "title": "Cá diêu hồng tươi VinMart"  ,
+  "hinhanh": "assets/resource/products/cadieuhong.jpg",
+  "status": "giaidoan_nuoigiong"
+}
+
+
+{
+  "$class": "org.hlfc.qlts.TaoSanPham",
+  "idSP": "sanpham7",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#calang",
+  "ttng": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#trangtrainuoigiong1",
+  "ttnnl": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#trangtrainguyenlieu1",
+  "ncb": "resource:org.hlfc.qlts.NhaCheBien#chebien1",
+  "npp": "resource:org.hlfc.qlts.NhaPhanPhoi#phanphoi1",
+  "nbl": "resource:org.hlfc.qlts.NhaBanLe#banle1",
+  "mota": "Cá lăng đỏ tươi được lấy từ nguồn thịt sạch, tươi ngon, sản xuất theo công nghệ hiện đại, mọi khâu từ tuyển chọn nguyên liệu tới chế biến, đóng bao bì dưới sự giám sát và kiểm tra nghiêm ngặt. ",
+  "title": "Cá lăng đỏ tươi VinMart " ,
+  "hinhanh": "assets/resource/products/calang.jpg",
+  "status": "giaidoan_nuoigiong"
+}
+
+
+{
+  "$class": "org.hlfc.qlts.TaoSanPham",
+  "idSP": "sanpham8",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#caloc",
+  "ttng": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#trangtrainuoigiong1",
+  "ttnnl": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#trangtrainguyenlieu1",
+  "ncb": "resource:org.hlfc.qlts.NhaCheBien#chebien1",
+  "npp": "resource:org.hlfc.qlts.NhaPhanPhoi#phanphoi1",
+  "nbl": "resource:org.hlfc.qlts.NhaBanLe#banle1",
+  "mota": "Cá lóc (cá quả) làm sạch không đầu do VinMart phân phối được lựa chọn từ nguồn nguyên liệu tự nhiên, đã qua chọn lọc kỹ lưỡng.",
+  "title": "Cá lóc (cá quả) làm sạch không đầu VinMart  " ,
+  "hinhanh": "assets/resource/products/caloc.jpg",
+  "status": "giaidoan_nuoigiong"
+}
+
+
+{
+  "$class": "org.hlfc.qlts.TaoSanPham",
+  "idSP": "sanpham9",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#caro",
+  "ttng": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#trangtrainuoigiong1",
+  "ttnnl": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#trangtrainguyenlieu1",
+  "ncb": "resource:org.hlfc.qlts.NhaCheBien#chebien1",
+  "npp": "resource:org.hlfc.qlts.NhaPhanPhoi#phanphoi1",
+  "nbl": "resource:org.hlfc.qlts.NhaBanLe#banle1",
+  "mota": "Cá rô phi lê là một trong số các loại cá có hương vị thơm ngon. Thịt cá có màu trắng, thịt dầy, mềm, ít xương và vị tanh dịu nhẹ. ",
+  "title": "Cá rô phi lê Đào Văn Sơn " ,
+  "hinhanh": "assets/resource/products/caro.jpg",
+  "status": "giaidoan_nuoigiong"
+}
+
+{
+  "$class": "org.hlfc.qlts.TaoSanPham",
+  "idSP": "sanpham10",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cathu",
+  "ttng": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#trangtrainuoigiong1",
+  "ttnnl": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#trangtrainguyenlieu1",
+  "ncb": "resource:org.hlfc.qlts.NhaCheBien#chebien1",
+  "npp": "resource:org.hlfc.qlts.NhaPhanPhoi#phanphoi1",
+  "nbl": "resource:org.hlfc.qlts.NhaBanLe#banle1",
+  "mota": "Cá thu cắt khúc là loại thực phẩm rất giàu đạm, thịt cá ngọt chắc và ít xương. Cá thu cắt khúc không chỉ là một món ăn ngon mà còn là loại thực phẩm đặc biệt bổ dưỡng.",
+  "title": "Cá thu cắt khúc VinMart" ,
+  "hinhanh": "assets/resource/products/cathu.jpg",
+  "status": "giaidoan_nuoigiong"
+}
+
+
+{
+  "$class": "org.hlfc.qlts.TaoSanPham",
+  "idSP": "sanpham11",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cathu",
+  "ttng": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#trangtrainuoigiong1",
+  "ttnnl": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#trangtrainguyenlieu1",
+  "ncb": "resource:org.hlfc.qlts.NhaCheBien#chebien1",
+  "npp": "resource:org.hlfc.qlts.NhaPhanPhoi#phanphoi1",
+  "nbl": "resource:org.hlfc.qlts.NhaBanLe#banle1",
+  "mota": "Cá thu cắt khúc Phú Quốc​ là loại thực phẩm rất giàu đạm, thịt cá ngọt chắc, ít xương và là một món ăn ngon mà còn là loại thực phẩm đặc biệt bổ dưỡng..",
+  "title": "Cá thu cắt khúc Phú Quốc VinMart ",
+  "hinhanh": "assets/resource/products/cathuPQ.jpg",
+  "status": "giaidoan_nuoigiong"
+}

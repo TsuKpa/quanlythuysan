@@ -1,0 +1,145 @@
+<div class="container">
+  <div class="title">
+  <h4>Các giai đoạn truy xuất nguồn gốc đang thực hiện</h4>
+  </div>
+
+  <div class="stepper">
+  <mat-horizontal-stepper labelPosition="bottom" #stepper>
+    <mat-step label="Giai Đoạn Nuôi Con Giống" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Nuôi Nguyên Liệu" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Chế Biến" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Phân Phối" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Bán Lẻ" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Hoàn Tất" [editable]="false" [completed]="true"></mat-step>
+  </mat-horizontal-stepper>
+  </div>
+
+  <div class="gd">
+  <h4>Chi tiết giai đoạn chế biến</h4>
+  </div>
+
+</div>
+<div class="container1">
+  <div class="title">
+
+
+
+
+    <mat-list role="list" *ngIf="chebien">
+      <mat-list-item role="listitem" *ngIf="nl"><strong>Nguyên liệu:</strong> <span>{{nl.tennguyenlieu}}</span></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem" *ngIf="cscb"><strong>Cơ sở chế biến:</strong> <span>{{cscb.tenCoSo}}</span></mat-list-item>
+      <mat-divider></mat-divider>
+      <br>
+
+      <mat-accordion [multi]="true">
+        <mat-expansion-panel expanded>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Thông tin nhận nguyên liệu
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+            <mat-list-item role="listitem"><strong>Số lượng nhận (kg):</strong> <span>{{chebien.soluongnhan}}</span></mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item role="listitem"><strong>Thời gian nhận:</strong> <span>{{tgnhannl}}</span></mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item role="listitem"><strong>Mã số lô nhận:</strong> <span>{{chebien.masolonhan}}</span></mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item role="listitem"><strong>Tên người nhận:</strong> <span>{{chebien.tennguoinhan}}</span></mat-list-item>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel expanded>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Giai đoạn cắt tiết
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list-item role="listitem"><strong>Khối lượng cắt tiết (kg):</strong> <span>{{chebien.khoiluongcattiet}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Khối lượng rửa (kg):</strong> <span>{{chebien.khoiluongrua}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Thời gian rửa:</strong> <span>{{chebien.tgrua}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Tên người rửa:</strong> <span>{{chebien.tennguoirua}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Nồng độ (ppm):</strong> <span>{{chebien.nongdo}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Nhiệt độ (độ C):</strong> <span>{{chebien.nhietdo}}</span></mat-list-item>
+        </mat-expansion-panel>
+
+
+
+        <mat-expansion-panel expanded>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Giai đoạn lạng da, soi ký sinh trùng
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list-item role="listitem"><strong>Khối lượng sơ chế (kg):</strong> <span>{{chebien.khoiluongsoche}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Thời gian bắt đầu sơ chế:</strong> <span>{{chebien.tgbdsoche}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Thời gian kết thúc sơ chế:</strong> <span>{{chebien.tgktsoche}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Tên người sơ chế:</strong> <span>{{chebien.tennguoisoche}}</span></mat-list-item>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel expanded>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Giai đoạn cấp đông
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list-item role="listitem"><strong>Nhiệt độ cấp đông (độ C):</strong> <span>{{chebien.nhietdocd}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Thời gian cấp đông:</strong> <span>{{chebien.tgcapdong}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Tên người cấp đông:</strong> <span>{{chebien.tennguoicd}}</span></mat-list-item>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel expanded>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Giai đoạn bao gói
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list-item role="listitem"><strong>Tên nhà cung cấp bao bì</strong> <span>{{chebien.tennccbb}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Số lượng bao bì:</strong> <span>{{chebien.soluongbb}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Loại bao bì: </strong> <span>{{chebien.loaibb}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Tên người bao gói:</strong> <span>{{chebien.tennguoibg}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Mã sản phẩm:</strong> <span>{{chebien.masanpham}}</span></mat-list-item>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel expanded>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Giai đoạn bảo quản và vận chuyển
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list-item role="listitem"><strong>Nhiệt độ bảo quản (độ C):</strong> <span>{{chebien.nhietdobq}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Thời gian xuất:</strong> <span>{{tgxuat}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Số lượng giao:</strong> <span>{{chebien.soluonggiao}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Mã số lô giao:</strong> <span>{{chebien.masologiao}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Địa điểm giao:</strong> <span>{{chebien.diadiemgiao}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem" *ngIf="pt"><strong>Phương tiện vận chuyển: </strong><span>{{pt.tenphuongtien}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem" *ngIf="csn"><strong>Cơ sở phân phối:</strong> <span>{{csn.tenCoSo}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Tên người vận chuyển:</strong> <span>{{chebien.tennguoivc}}</span></mat-list-item>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+
+    </mat-list>
+  </div>
+</div>

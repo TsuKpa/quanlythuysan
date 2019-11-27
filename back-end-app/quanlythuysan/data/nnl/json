@@ -1,0 +1,90 @@
+{
+  "$class": "org.hlfc.qlts.TrangTraiNNL",
+  "owner": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#haihiennl",
+  "idTrangTrai": "trangtrainlhh",
+  "tenTrangTrai": "Bè cá basa Hai Hiến",
+  "diachitt": "quốc lộ 1A, Quế Sơn, Quảng Nam",
+  "sdt": "0251 3831 254",
+  "email": "null",
+  "cmnd": "989898898",
+  "ao": ["aonlhh1","aonlhh2"],
+  "mota": "Chuyên cung cấp cá basa nguyên liệu số lượng lớn, cá đạt tiêu chuẩn có thịt chắc, không bị bệnh, mỗi con có thể đạt 5 - 10kg"
+}
+
+{
+  "$class": "org.hlfc.qlts.TrangTraiNuoiNguyenLieu",
+  "tt": "resource:org.hlfc.qlts.TrangTraiNNL#trangtrainlhh",
+  "username": "haihiennl",
+  "fullname": "Bè cá basa Hai Hiến",
+  "sdt": "989898898",
+  "email": "string"
+}
+
+
+
+{
+  "$class": "org.hlfc.qlts.AoNNL",
+  "trangtrai": "resource:org.hlfc.qlts.TrangTraiNNL#trangtrainlhh",
+  "owner": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#haihiennl",
+  "idAo": "aohh1",
+  "tenAo": "Bè cá basa 20x30x5",
+  "dientich": "52mx60mx1.5m"
+}
+
+{
+  "$class": "org.hlfc.qlts.AoNNL",
+  "trangtrai": "resource:org.hlfc.qlts.TrangTraiNNL#trangtrainlhh",
+  "owner": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#haihiennl",
+  "idAo": "aohh2",
+  "tenAo": "Ao cá basa 70x50x1.5",
+  "dientich": "70mx50mx1.5m"
+}
+
+
+----------------------------------------------------------------------------
+
+
+{
+  "$class": "org.hlfc.qlts.TrangTraiNNL",
+  "owner": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#namnunl",
+  "idTrangTrai": "trangtrainlnn",
+  "tenTrangTrai": "Trại cá Năm Nu",
+  "diachitt": "Ấp An Thạnh, Xã Bình Hòa Phước, Huyện Long Hồ, Tỉnh Vĩnh Long",
+  "sdt": "0251 3831 254",
+  "email": "null",
+  "cmnd": "989898898",
+  "ao": ["aonlnn1","aonlnn2"],
+  "mota": "Chuyên cung cấp cá lóc và chim trắng nguyên liệu số lượng lớn, cá đạt tiêu chuẩn có thịt chắc, không bị bệnh, mỗi con có thể đạt 5 - 10kg"
+}
+
+{
+  "$class": "org.hlfc.qlts.TrangTraiNuoiNguyenLieu",
+  "tt": "resource:org.hlfc.qlts.TrangTraiNNL#trangtrainlnn",
+  "username": "namnunl",
+  "fullname": "Trại cá Năm Nu",
+  "sdt": "989898898",
+  "email": "string"
+}
+
+
+
+{
+  "$class": "org.hlfc.qlts.AoNNL",
+  "trangtrai": "resource:org.hlfc.qlts.TrangTraiNNL#trangtrainlnn",
+  "owner": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#namnunl",
+  "idAo": "aonn1",
+  "tenAo": "Ao cá lóc 30x60x1.7",
+  "dientich": "30mx60mx1.5m"
+}
+
+{
+  "$class": "org.hlfc.qlts.AoNNL",
+  "trangtrai": "resource:org.hlfc.qlts.TrangTraiNNL#trangtrainlnn",
+  "owner": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#namnunl",
+  "idAo": "aonn2",
+  "tenAo": "Ao cá chim trắng 70x50x1.5",
+  "dientich": "70mx50mx1.5m"
+}
+
+
+

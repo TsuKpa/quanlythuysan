@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="title">
+  <h4>Các giai đoạn truy xuất nguồn gốc đang thực hiện</h4>
+  </div>
+
+  <div class="stepper">
+  <mat-horizontal-stepper labelPosition="bottom" #stepper>
+    <mat-step label="Giai Đoạn Nuôi Con Giống" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Nuôi Nguyên Liệu" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Chế Biến" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Phân Phối" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Bán Lẻ" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Hoàn Tất" [editable]="false" [completed]="true"></mat-step>
+  </mat-horizontal-stepper>
+  </div>
+
+  <div class="gd">
+  <h4>Chi tiết giai đoạn nuôi nguyên liệu</h4>
+  </div>
+
+</div>
+
+<div class="container1">
+  <div class="title">
+    <mat-list role="list" *ngIf="nuoinl">
+      <mat-list-item role="listitem" *ngIf="nl"><strong>Nguyên liệu:</strong> <span>{{nl.tennguyenlieu}}</span></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem" *ngIf="ao"><strong>Ao:</strong> <span>{{ao.tenAo}}</span></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem" *ngIf="tt"><strong>Trang trại nuôi:</strong> <span>{{tt.tenTrangTrai}}</span></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem"><strong>Thời gian nhận:</strong> <span>{{tgnhangiong}}</span></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem"><strong>Thời gian xuất ao: </strong><span>{{tgxuatao}}</span></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem" *ngIf="pt"><strong>Phương tiện vận chuyển: </strong><span>{{pt.tenphuongtien}}</span></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem" *ngIf="csn"><strong>Cơ sở chế biến nhận:</strong> <span>{{csn.tenCoSo}}</span></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem"><strong>Số lượng (kg):</strong> <span>{{nuoinl.soluong}}</span></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem"><strong>Mô tả:</strong></mat-list-item>
+      <br>
+      <mat-list-item role="listitem"><span>{{nuoinl.mota}}</span></mat-list-item>
+    </mat-list>
+  </div>
+</div>

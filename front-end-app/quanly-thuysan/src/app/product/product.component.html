@@ -1,0 +1,53 @@
+<div class="container1">
+  <div class="grid-container-contact">
+    <div class="tieudect">Tìm kiếm sản phẩm đã hoàn tất các giai đoạn</div>
+
+
+      <div class="input">
+          <input matInput class="input-contact" type="text" [(ngModel)]="productName"
+                 (keyup.enter)="onSubmit(productName)"
+                 placeholder="Nhập mã sản phẩm ví dụ: sanpham01">
+      </div>
+
+      <div class="send">
+        <button (click)="onSubmit(productName)" class="btn waves-effect waves-light" name="action">Tìm kiếm
+          <i class="material-icons right">search</i>
+        </button>
+      </div>
+
+
+  </div>
+
+
+  <div class="container">
+
+    <mat-card class="example-card" *ngFor="let spn of spns | paginate: { itemsPerPage: 8, currentPage: p }">
+      <img mat-card-image [src]="spn.hinhanh" alt="image of product">
+      <mat-card-header class="title">
+        <mat-card-title>{{spn.title}}</mat-card-title>
+        <mat-card-subtitle>#{{spn.idSP}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="mat-card-content">
+        <p>
+          {{spn.mota}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions class="mat-card-action">
+        <div class="action-content" [ngSwitch]="true">
+          <button mat-button color="primary" (click)="direct(spn.idSP,spn.status)">Xem Thêm</button>
+          <span class="status1" *ngSwitchCase="spn.status === 'hoantat'">Hoàn Tất</span>
+          <span class="status" *ngSwitchCase="spn.status === 'giaidoan_nuoigiong'">Nuôi Giống</span>
+          <span class="status" *ngSwitchCase="spn.status === 'giaidoan_nuoinguyenlieu'">Nguyên Liệu</span>
+          <span class="status" *ngSwitchCase="spn.status === 'giaidoan_chebien'">Chế Biến</span>
+          <span class="status" *ngSwitchCase="spn.status === 'giaidoan_phanphoi'">Phân Phối</span>
+          <span class="status" *ngSwitchCase="spn.status === 'giaidoan_banle'">Bán Lẻ</span>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div class="container2">
+    <pagination-controls (pageChange)="p = $event" class="my-pagination"></pagination-controls>
+  </div>
+
+</div>

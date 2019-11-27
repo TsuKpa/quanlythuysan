@@ -1,0 +1,97 @@
+<div class="container">
+  <h2 class="question">Câu hỏi thường gặp (FAQ)</h2>
+  <div class="answer">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Quy trình truy xuất nguồn gốc như thế nào?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Để truy xuất nguồn gốc một sản phẩm thì người tham gia cần liên hệ với admin để tạo sản phẩm và người tham gia.
+        Sau đó admin sẽ liên hệ với người tham gia để hướng dẫn họ về cách thức nhập thông tin giai đoạn của sản phẩm cũng như đưa cho họ tệp (card) để có thể truy cập vào mạng.
+        Sau khi đã có tệp (card) thì làm theo các bước sau:</p>
+        <mat-list>
+          <mat-list-item><b>Bước 1: Đăng Nhập</b></mat-list-item>
+          <p>
+            Người tham gia cần vào địa chỉ đã cung cấp sau đó click vào nút <b>Sản Phẩm</b> ở thanh tiêu đề.
+          </p>
+          <img src="../../assets/resource/sanpham.svg" alt="Đăng nhập">
+          <br>
+          <br>
+          <p>Sau đó đăng nhập bằng card và tên của bạn.</p>
+          <br><br>
+          <img src="../../assets/resource/login.png" alt="login">
+          <br><br>
+          <mat-list-item><b>Bước 2: Nhập Mã Sản Phẩm</b></mat-list-item>
+          <p>
+            Người tham gia nhập mã sản phẩm đã được admin cung cấp vào khung nhập liệu sau đó nhấn nút <b>Tìm Kiếm</b> có hình kính lúp.
+          </p>
+          <img src="../../assets/resource/timkiem.png" alt="Nhập mã SP">
+
+          <mat-list-item><b>Bước 3: Tham Gia Truy Xuất</b></mat-list-item>
+          <p>Sau khi đã tìm ra sản phẩm với thông tin phù hợp thì tiếp tục nhấn vào nút <b>Xem Thêm</b>. Sau đó form nhập thông tin của giai
+          đoạn sẽ hiện ra nếu như bạn đúng là người tham gia vào các giai đoạn sản phẩm và giai đoạn của bạn chưa được nhập. Sau khi nhập xong thì nhấn vào nút <b>Submit</b> và hoàn tất quá trình truy xuất.</p>
+          <img src="../../assets/resource/select.svg" alt="select">
+          <p>1, 3: Trạng thái của sản phẩm
+            <br><br>
+            2: Xem thêm nếu như bạn đang ở giai đoạn nuôi nguyên liệu và là nhà cung cấp nguyên liệu
+thì sẽ chuyển bạn đến trang nhập nguyên liệu.</p> <br>
+          <img src="../../assets/resource/truyxuat.png" alt="Truy xuất">
+
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Làm sao để truy xuất nguồn gốc sản phẩm?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+          <p>Tra cứu nguồn gốc sản phẩm đã được ghi nhận lại từ lúc sản phẩm là con giống cho tới giai đoạn thành phẩm giao cho người dùng. Người dùng cần sử dụng ứng dụng quét mã QR.
+          Sau khi quét thành công sẽ chuyển bạn tới trang web truy cứu nguồn gốc (Bạn cần đăng nhập để sử dụng hệ thống). Khi đăng nhập xong bạn có thể nhấn nút <b>Xem Thêm</b> để biết người tham gia cũng như thông tin của từng giai đoạn.</p>
+        <img src="../../assets/resource/ketqua2.svg" alt="sanpham" style="margin-bottom: 30px">
+        <br><br>
+      </mat-expansion-panel>
+
+
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Sử dụng công nghệ Blockchain trong truy xuất nguồn gốc có ưu điểm gì?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+            <p>Công nghệ <a href="https://www.google.com/search?client=ubuntu&channel=fs&q=blockchain+l%C3%A0+g%C3%AC&ie=utf-8&oe=utf-8">Blockchain</a> cho phép chúng ta lưu trữ dữ liệu an toàn và bảo mật.
+              <br>
+              <br>
+              <i>Khi dữ liệu được mã hóa và thêm vào 1 khối (block) thì khối tiếp theo sẽ lưu dữ liệu tiếp theo liên kết với khối trước nó thành một chuỗi.</i> Do đó, khi có người muốn sửa đổi dữ liệu thì sẽ phải làm thay đổi những khối phía sau nó.
+              Đó là cách mà Blockchain đảm bảo tính toàn vẹn và bất biến cho dữ liệu.
+              <br>
+              <br>
+              Với lợi ích kể trên thì Blọckchain được ứng dụng vào nhiều nghành nghề cần sự minh bạch như là Y tế, quản lý văn bằng, chuỗi cung ứng,...
+              <br>
+              <br>
+              Công nghệ được sử dụng là <a href="https://hyperledger-fabric.readthedocs.io/en/latest/getting_started.html">Hyperledger Fabric</a>. Là công nghệ mã nguồn mở với sự tham gia của cộng đồng hỗ trợ rộng lớn như Linux Foundation, IBM, Intel, CISCO,...
+              <br>
+              <br>
+              Khác với công nghệ Blockchain public như Ethereum (Mọi giao dịch đều được nhìn thấy bới người tham gia). Với Hyperledger Fabric bạn chỉ được tham gia vào mạng khi đã cung cấp danh tính cho hệ thống và với những tổ chức khác nhau sẽ có những kênh riêng
+              để giao tiếp. Mỗi giao dịch của kênh thì private với kênh khác, đảm bảo vấn đề thông tin nhạy cảm khi hai công ty trao đổi thông tin khác nhau và không muốn bên kia biết thông tin đó.
+
+            </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Khi card được cung cấp không đăng nhập được thì làm thế nào?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Khi card không đăng nhập được là do card của bạn đã được sử dụng trước đó và cần liên hệ admin để cung cấp card mới.</p>
+      </mat-expansion-panel>
+
+
+
+    </mat-accordion>
+
+  </div>
+</div>

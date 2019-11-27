@@ -1,0 +1,136 @@
+{
+  "$class": "org.hlfc.qlts.TaoSanPham",
+  "idSP": "sanpham1",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "ttng": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#trangtrainuoigiong1",
+  "ttnnl": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#trangtrainguyenlieu1",
+  "ncb": "resource:org.hlfc.qlts.NhaCheBien#chebien1",
+  "npp": "resource:org.hlfc.qlts.NhaPhanPhoi#phanphoi1",
+  "nbl": "resource:org.hlfc.qlts.NhaBanLe#banle1",
+  "mota": "Cá BaSa fillet tươi ngon hợp vệ sinh",
+  "title": "Cá BaSa fillet gói 1kg",
+  "hinhanh": "assets/resource/basa.jpg",
+  "status": "giaidoan_nuoigiong"
+}
+"hinhanh": "assets/resource/cachem.jpg",
+"hinhanh": "assets/resource/ca-chim-trang.jpg",
+"hinhanh": "assets/resource/caloc.jpeg",
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanNuoiGiong",
+  "idgdng": "gdng1",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham1",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham1",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "ao": "resource:org.hlfc.qlts.AoNG#aong1",
+  "trangtrai": "resource:org.hlfc.qlts.TrangTraiNG#trangtraing1",
+  "tgnuoi": "2019-10-06T09:00:39.376Z",
+  "tgxuatao": "2019-10-06T09:00:39.376Z",
+  "phuongtien": "resource:org.hlfc.qlts.PhuongTien#xetai1",
+  "trangtrainhan": "resource:org.hlfc.qlts.TrangTraiNNL#trangtrainl1",
+  "soluong": 1000,
+  "mota": "Ca ba sa chat luong khoi che",
+  "trangtrainuoigiong": "resource:org.hlfc.qlts.TrangTraiNuoiGiong#trangtrainuoigiong1"
+}
+
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanNuoiNguyenLieu",
+  "idgdnnl": "gdnnl1",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham1",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham1",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "ao": "resource:org.hlfc.qlts.AoNNL#aonl2",
+  "trangtrai": "resource:org.hlfc.qlts.TrangTraiNNL#trangtrainl1",
+  "tgnhangiong": "2019-10-06T09:11:57.937Z",
+  "tgxuatao": "2019-10-06T09:11:57.937Z",
+  "phuongtien": "resource:org.hlfc.qlts.PhuongTien#xetai2",
+  "cscb": "resource:org.hlfc.qlts.CoSoCB#cosocb1",
+  "soluong": 800,
+  "mota": "Ca basa chat luong khoi che",
+  "trangtrainuoinguyenlieu": "resource:org.hlfc.qlts.TrangTraiNuoiNguyenLieu#trangtrainguyenlieu1"
+}
+
+
+
+
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanCheBien",
+  "idgdcb": "gdcb1",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham1",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham1",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "cscb": "resource:org.hlfc.qlts.CoSoCB#cosocb1",
+  "soluongnhan": 800,
+  "tgnhannl": "2019-10-06T09:16:02.206Z",
+  "masolonhan": "goihang1",
+  "tennguoinhan": "Tran Van B",
+  "khoiluongcattiet": "800",
+  "khoiluongrua": "800",
+  "tgrua": "60p",
+  "tennguoirua": "Nguyễn Thị Anh Thư",
+  "nongdo": "500",
+  "nhietdo": "50",
+  "khoiluongsoche": "800",
+  "tgbdsoche": "15h30",
+  "tgktsoche": "15h45",
+  "tennguoisoche": "Daniel Ishutin",
+  "nhietdocd": "-30",
+  "tgcapdong": "60p",
+  "tennguoicd": "Kuro Kuroky",
+  "tennccbb": "Nha cung cap Hoa An",
+  "soluongbb": "800",
+  "loaibb": "Tot",
+  "tennguoibg": "Tsar Putin",
+  "masanpham": "sanpham1",
+  "nhietdobq": "0",
+  "tgxuat": "2019-10-06T09:16:02.206Z",
+"soluonggiao": "800",
+  "masologiao": "lohang2",
+  "diadiemgiao": "Cang Cai Cui",
+  "phuongtien": "resource:org.hlfc.qlts.PhuongTien#xetai1",
+  "cspp": "resource:org.hlfc.qlts.CoSoPP#cosopp1",
+  "tennguoivc": "Johny Deep",
+  "nhachebien": "resource:org.hlfc.qlts.NhaCheBien#chebien1"
+}
+
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanPhanPhoi",
+  "idgdpp": "gdpp1",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham1",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham1",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "cspp": "resource:org.hlfc.qlts.CoSoPP#cosopp1",
+  "soluongnhan": 800,
+  "tgnhan": "2019-10-06T09:26:45.552Z",
+  "masolonhan": "lohang2",
+  "tennguoinhan": "Vo Hoai Duy",
+  "phanloai": "1kg/con",
+  "diadiemnhan": "Cang Cai Cui",
+  "masanpham": "sanpham1",
+  "soluonggiao": 32,
+  "tggiao": "2019-10-06T09:26:45.552Z",
+  "masologiao": "lohang3",
+  "tennguoigiao": "Ronaldo",
+ "phuongtien": "resource:org.hlfc.qlts.PhuongTien#xetai1",
+  "csbl": "resource:org.hlfc.qlts.CoSoBL#cosobl1",
+  "nhaphanphoi": "resource:org.hlfc.qlts.NhaPhanPhoi#phanphoi1"
+}
+
+{
+  "$class": "org.hlfc.qlts.TaoGiaiDoanBanLe",
+  "idgdbl": "gdbl1",
+  "sanphamnoi": "resource:org.hlfc.qlts.SanPhamNoi#sanpham1",
+  "sanphamngoai": "resource:org.hlfc.qlts.SanPhamNgoai#sanpham1",
+  "nguyenlieu": "resource:org.hlfc.qlts.NguyenLieu#cabasa",
+  "csbl": "resource:org.hlfc.qlts.CoSoBL#cosobl1",
+  "soluongnhan": 32,
+  "tgnhan": "2019-10-17T03:08:14.724Z",
+  "masolonhan": "lohang3",
+  "tennguoigiao": "Ronaldo",
+  "phanloai": "1kg/con",
+  "masanpham": "sanpham1",
+  "nhabanle": "resource:org.hlfc.qlts.NhaBanLe#banle1"
+}

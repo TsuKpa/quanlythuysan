@@ -1,0 +1,380 @@
+<div class="container">
+  <div class="title">
+  <h4>Các giai đoạn truy xuất nguồn gốc đang thực hiện</h4>
+  </div>
+
+  <div class="stepper">
+  <mat-horizontal-stepper labelPosition="bottom" #stepper>
+    <mat-step label="Giai Đoạn Nuôi Con Giống" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Nuôi Nguyên Liệu" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Chế Biến" [editable]="false"></mat-step>
+    <mat-step label="Giai Đoạn Phân Phối" [editable]="false"></mat-step>
+    <mat-step label="Giai Đoạn Bán Lẻ" [editable]="false"></mat-step>
+    <mat-step label="Hoàn Tất" [editable]="false"></mat-step>
+  </mat-horizontal-stepper>
+  </div>
+
+  <div class="gd">
+  <h4>Giai đoạn chế biến</h4>
+  </div>
+
+
+  <mat-progress-spinner color="primary"
+                        mode="indeterminate" *ngIf="isLoading" >
+  </mat-progress-spinner>
+<div class="form">
+  <div [hidden]="submitted">
+    <form (ngSubmit)="onSubmit()" class="myform" #ngForm="ngForm">
+
+      <mat-label>ID: <strong>{{idNG}}</strong></mat-label>
+      <table>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <mat-select placeholder="Nguyên Liệu" [ngModel]="chebien.nguyenlieu"
+                            class="form-control" [disabled]="true"
+                            [ngModelOptions]="{standalone: true}">
+                  <mat-option *ngIf="nl" [value]="chebien.nguyenlieu">{{nl.tennguyenlieu}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <span>Thông tin nhận nguyên liệu</span>
+      <table>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="number" placeholder="Số lượng nhận (kg)"
+                        required
+                       min="0" name="soluong" [(ngModel)]="chebien.soluongnhan">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker2" placeholder="Thời gian nhận"
+                       [(ngModel)]="chebien.tgnhannl" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+      <input matInput type="text" placeholder="Mã số lô nhận" [(ngModel)]="chebien.masolonhan" class="form-control" required
+             [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Tên người nhận" [(ngModel)]="chebien.tennguoinhan" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <span>Giai đoạn cắt tiết</span>
+
+      <table>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="number" placeholder="Khối lượng cắt tiết (kg)"
+                       class="form-control" required
+                       min="0" name="soluong" [(ngModel)]="chebien.khoiluongcattiet">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="number" placeholder="Khối lượng rửa (kg)"
+                       class="form-control" required
+                       min="0" name="soluong" [(ngModel)]="chebien.khoiluongrua">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Thời gian rửa (phút)" [(ngModel)]="chebien.tgrua" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Tên người rửa" [(ngModel)]="chebien.tennguoirua" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Nồng độ rửa (ppm)" [(ngModel)]="chebien.nongdo" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="number" placeholder="Nhiệt độ rửa (độ C)" [(ngModel)]="chebien.nhietdo" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <span>Giai đoạn lạng da, soi ký sinh trùng</span>
+      <table>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="number" placeholder="Khối lượng sơ chế (kg)"
+                       required
+                       min="0" name="soluong" [(ngModel)]="chebien.khoiluongsoche"
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Thời gian bắt đầu sơ chế"
+                       required [(ngModel)]="chebien.tgbdsoche"
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Thời gian kết thúc sơ chế"
+                       required [(ngModel)]="chebien.tgktsoche"
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Tên người sơ chế" [(ngModel)]="chebien.tennguoisoche" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <span>Giai đoạn cấp đông</span>
+      <table>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="number" placeholder="Nhiệt độ cấp đông (độ C)"
+                     max="0"  required [(ngModel)]="chebien.nhietdocd"
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Thời gian cấp đông (phút)"
+                       required [(ngModel)]="chebien.tgcapdong"
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Tên người cấp đông"
+                       [(ngModel)]="chebien.tennguoicd" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+
+      <span>Giai đoạn bao gói</span>
+      <table>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Tên nhà cung cấp bao bì" [(ngModel)]="chebien.tennccbb" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="number" placeholder="Số lượng bao bì"
+                       min="0"  required [(ngModel)]="chebien.soluongbb"
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Loại bao bì" [(ngModel)]="chebien.loaibb" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Tên người bao gói" [(ngModel)]="chebien.tennguoibg" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Mã sản phẩm" [(ngModel)]="id" class="form-control" required
+                      [disabled]="true" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+
+
+      <span>Giai đoạn bảo quản và vận chuyển</span>
+      <table>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="number" placeholder="Nhiệt độ bảo quản"
+                       max="0"  required [(ngModel)]="chebien.nhietdobq"
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker1" placeholder="Thời gian xuất"
+                       [(ngModel)]="chebien.tgxuat" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="number" placeholder="Số lượng giao"
+                       min="0"  required [(ngModel)]="chebien.soluonggiao"
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Mã số lô giao"
+                       [(ngModel)]="chebien.masologiao" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Địa điểm giao"
+                       [(ngModel)]="chebien.diadiemgiao" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <mat-select placeholder="Phương Tiện" [(ngModel)]="chebien.phuongtien"
+                            class="form-control" required [ngModelOptions]="{standalone: true}">
+                  <mat-option *ngFor="let p of pt" [value]="p.idpt">{{p.tenphuongtien}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <mat-select placeholder="Cơ Sở Phân Phối Nhận" [(ngModel)]="chebien.cspp"
+                            class="form-control" required
+                            [ngModelOptions]="{standalone: true}">
+                  <mat-option *ngFor="let t of cs" [value]="t.idcoso">{{t.tenCoSo}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </td>
+          <td>
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Tên người vận chuyển"
+                       [(ngModel)]="chebien.tennguoivc" class="form-control" required
+                       [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <button mat-raised-button type="submit" color="primary" class="btn"
+              [disabled]="!ngForm.valid">Submit
+      </button>
+    </form>
+
+  </div>
+</div>
+</div>
+

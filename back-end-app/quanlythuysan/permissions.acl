@@ -1,0 +1,259 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+rule ReadResources {
+  description: "Grant ALL participant full access to system resources"
+  participant: "org.hlfc.qlts.**"
+  operation: READ
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
+}
+
+rule ReadUserResource {
+  description: "Grant read access to user resrouce"
+  participant: "org.hlfc.qlts.**"
+  operation: READ
+  resource: "**"
+  action: ALLOW
+}
+
+
+
+
+
+rule TTNGPC {
+	description: "Trang trai nuoi giong tao va cap nhat giai doan nuoi giong"
+  	participant: "org.hlfc.qlts.TrangTraiNuoiGiong"
+  	operation: CREATE
+    resource: "org.hlfc.qlts.TaoGiaiDoanNuoiGiong"
+  	action: ALLOW
+}
+
+rule TTNGPCa {
+	description: "Trang trai nuoi giong tao va cap nhat giai doan nuoi giong"
+  	participant: "org.hlfc.qlts.TrangTraiNuoiGiong"
+  	operation: CREATE
+    resource: "org.hlfc.qlts.GiaiDoanNuoiGiong"
+  	action: ALLOW
+}
+
+rule TTNGPC1 {
+	description: "Trang trai nuoi giong tao va cap nhat giai doan nuoi giong"
+  	participant: "org.hlfc.qlts.TrangTraiNuoiGiong"
+  	operation: CREATE
+    resource: "org.hyperledger.composer.system.**"
+  	action: ALLOW
+}
+
+rule TTNGPC2 {
+	description: "Trang trai nuoi giong tao va cap nhat giai doan nuoi giong"
+  	participant(m): "org.hlfc.qlts.TrangTraiNuoiGiong"
+  	operation: UPDATE
+    resource(v): "org.hlfc.qlts.SanPhamNoi"
+  	condition: (v.ttng.getIdentifier() == m.getIdentifier())
+  	action: ALLOW
+}
+rule TTNGPC3 {
+	description: "Trang trai nuoi giong tao va cap nhat giai doan nuoi giong"
+  	participant: "org.hlfc.qlts.TrangTraiNuoiGiong"
+  	operation: UPDATE
+    resource: "org.hlfc.qlts.SanPhamNgoai"
+  	action: ALLOW
+}
+
+
+
+rule TTNNLThayGDNNL {
+	description: "Trang trai nuoi nguyen lieu tao va cap nhat duoc gd nuoi nguyen lieu"
+  	participant: "org.hlfc.qlts.TrangTraiNuoiNguyenLieu"
+  	operation: CREATE
+    resource: "org.hlfc.qlts.TaoGiaiDoanNuoiNguyenLieu"
+  	action: ALLOW
+}
+
+rule TTNNLThayGDNNLa {
+	description: "Trang trai nuoi nguyen lieu tao va cap nhat duoc gd nuoi nguyen lieu"
+  	participant: "org.hlfc.qlts.TrangTraiNuoiNguyenLieu"
+  	operation: CREATE
+    resource: "org.hlfc.qlts.GiaiDoanNuoiNguyenLieu"
+  	action: ALLOW
+}
+
+rule TTNNLThayGDNNL1 {
+	description: "Trang trai nuoi nguyen lieu tao va cap nhat duoc gd nuoi nguyen lieu"
+  	participant: "org.hlfc.qlts.TrangTraiNuoiNguyenLieu"
+  	operation: CREATE
+    resource: "org.hyperledger.composer.system.**"
+  	action: ALLOW
+}
+rule TTNNLThayGDNNL2 {
+	description: "Trang trai nuoi nguyen lieu tao va cap nhat duoc gd nuoi nguyen lieu"
+  	participant: "org.hlfc.qlts.TrangTraiNuoiNguyenLieu"
+  	operation: UPDATE
+    resource: "org.hlfc.qlts.SanPhamNgoai"
+  	action: ALLOW
+}
+rule TTNNLThayGDNNL3 {
+	description: "Trang trai nuoi nguyen lieu tao va cap nhat duoc gd nuoi nguyen lieu"
+  	participant(m): "org.hlfc.qlts.TrangTraiNuoiNguyenLieu"
+  	operation: UPDATE
+    resource(v): "org.hlfc.qlts.SanPhamNoi"
+  	condition: (v.ttnnl.getIdentifier() == m.getIdentifier())
+  	action: ALLOW
+}
+
+
+rule CSCBThayGDCB  {
+	description: "Co so che bien tao va cap nhat giai doan che bien"
+  	participant: "org.hlfc.qlts.NhaCheBien"
+  	operation: CREATE
+    resource: "org.hlfc.qlts.TaoGiaiDoanCheBien"
+  	action: ALLOW
+}
+
+rule CSCBThayGDCBa  {
+	description: "Co so che bien tao va cap nhat giai doan che bien"
+  	participant: "org.hlfc.qlts.NhaCheBien"
+  	operation: CREATE
+    resource: "org.hlfc.qlts.GiaiDoanCheBien"
+  	action: ALLOW
+}
+
+rule CSCBThayGDCB1 {
+	description: "Co so che bien tao va cap nhat giai doan che bien"
+  	participant: "org.hlfc.qlts.NhaCheBien"
+  	operation: CREATE
+    resource: "org.hyperledger.composer.system.**"
+  	action: ALLOW
+}
+
+rule CSCBThayGDCB2 {
+	description: "Co so che bien tao va cap nhat giai doan che bien"
+  	participant: "org.hlfc.qlts.NhaCheBien"
+  	operation: UPDATE
+    resource: "org.hlfc.qlts.SanPhamNgoai"
+  	action: ALLOW
+}
+
+rule CSCBThayGDCB3 {
+	description: "Co so che bien tao va cap nhat giai doan che bien"
+  	participant(m): "org.hlfc.qlts.NhaCheBien"
+  	operation: UPDATE
+    resource(v): "org.hlfc.qlts.SanPhamNoi"
+  	condition: (v.ncb.getIdentifier() == m.getIdentifier())
+  	action: ALLOW
+}
+
+
+
+rule CSPPThayGDPP {
+	description: "Co so phan phoi tao va cap nhat giai doan phan phoi"
+  	participant: "org.hlfc.qlts.NhaPhanPhoi"
+  	operation: CREATE
+    resource: "org.hlfc.qlts.TaoGiaiDoanPhanPhoi"
+  	action: ALLOW
+}
+
+rule CSPPThayGDPPa {
+	description: "Co so phan phoi tao va cap nhat giai doan phan phoi"
+  	participant: "org.hlfc.qlts.NhaPhanPhoi"
+  	operation: CREATE
+    resource: "org.hlfc.qlts.GiaiDoanPhanPhoi"
+  	action: ALLOW
+}
+
+rule CSPPThayGDPP1 {
+	description: "Co so phan phoi tao va cap nhat giai doan phan phoi"
+  	participant: "org.hlfc.qlts.NhaPhanPhoi"
+  	operation: CREATE
+    resource: "org.hyperledger.composer.system.**"
+  	action: ALLOW
+}
+
+rule CSPPThayGDPP2 {
+	description: "Co so phan phoi tao va cap nhat giai doan phan phoi"
+  	participant(m): "org.hlfc.qlts.NhaPhanPhoi"
+  	operation: UPDATE
+    resource(v): "org.hlfc.qlts.SanPhamNoi"
+  	condition: (v.npp.getIdentifier() == m.getIdentifier())
+  	action: ALLOW
+}
+
+rule CSPPThayGDPP3 {
+	description: "Co so phan phoi tao va cap nhat giai doan phan phoi"
+  	participant: "org.hlfc.qlts.NhaPhanPhoi"
+  	operation: UPDATE
+    resource: "org.hlfc.qlts.SanPhamNgoai"
+  	action: ALLOW
+}
+
+
+rule NBLThayGDBL {
+	description: "Nha ban le tao va cap nhat giai doan ban le"
+  	participant: "org.hlfc.qlts.NhaBanLe"
+  	operation: CREATE
+    resource: "org.hlfc.qlts.TaoGiaiDoanBanLe"
+  	action: ALLOW
+}
+
+rule NBLThayGDBLa {
+	description: "Nha ban le tao va cap nhat giai doan ban le"
+  	participant: "org.hlfc.qlts.NhaBanLe"
+  	operation: CREATE
+    resource: "org.hlfc.qlts.GiaiDoanBanLe"
+  	action: ALLOW
+}
+
+rule NBLThayGDBL1 {
+	description: "Nha ban le tao va cap nhat giai doan ban le"
+  	participant: "org.hlfc.qlts.NhaBanLe"
+  	operation: CREATE
+    resource: "org.hyperledger.composer.system.**"
+  	action: ALLOW
+}
+
+rule NBLThayGDBL2 {
+	description: "Nha ban le tao va cap nhat giai doan ban le"
+  	participant: "org.hlfc.qlts.NhaBanLe"
+  	operation: UPDATE
+    resource: "org.hlfc.qlts.SanPhamNgoai"
+  	action: ALLOW
+}
+
+rule NBLThayGDBL3 {
+	description: "Nha ban le tao va cap nhat giai doan ban le"
+  	participant(m): "org.hlfc.qlts.NhaBanLe"
+  	operation: UPDATE
+    resource(v): "org.hlfc.qlts.SanPhamNoi"
+  	condition: (v.nbl.getIdentifier() == m.getIdentifier())
+  	action: ALLOW
+}
+
+
+
+rule NetworkAdminUser {
+    description: "Grant business network administrators full access to user resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "**"
+    action: ALLOW
+}
+
+rule NetworkAdminSystem {
+    description: "Grant business network administrators full access to system resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}

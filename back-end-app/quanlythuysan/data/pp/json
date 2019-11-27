@@ -1,0 +1,50 @@
+{
+  "$class": "org.hlfc.qlts.CoSoPP",
+  "owner": "org.hlfc.qlts.NhaPhanPhoi#pprungbien",
+  "idcoso": "csrungbien",
+  "tenCoSo": "Công ty TNHH Rừng Biển",
+  "diachics": "số 51 đường Nguyễn Cư Trinh, phường Nguyễn Cư Trinh , Quận 1, TP. Hồ Chí Minh",
+  "sdt": "028 3771 7705",
+  "email": "rungbienkd@gmail.com",
+  "cmnd": "111111111",
+  "mota": "Được thành lập năm 2010, công ty chúng tôi chuyên về sản xuất thức ăn chăn nuôi thủy sản, nuôi trồng, chế biến và xuất khẩu cá tra, basa với quy mô lớn và hiện đại ở đồng bằng sông Cửu Long. Cơ sở sản xuất của chúng tôi được trang bị máy móc, thiết bị hiện đại bao gồm và nhà máy chế biến cá tra, cá basa xuất khẩu và nhà máy bảo quản được nhập từ Châu Âu."
+}
+
+{
+  "$class": "org.hlfc.qlts.NhaPhanPhoi",
+  "cspp": "resource:org.hlfc.qlts.CoSoPP#csrungbien",
+  "username": "pprungbien",
+  "fullname": "Công ty TNHH Rừng Biển",
+  "sdt": "028 3771 7705",
+  "email": "rungbienkd@gmail.com"
+}
+
+
+
+
+----------------------------------------------------------------------------
+
+
+{
+  "$class": "org.hlfc.qlts.CoSoPP",
+  "owner": "org.hlfc.qlts.NhaPhanPhoi#ppnextfarm",
+  "idcoso": "csnextfarm",
+  "tenCoSo": "Cơ sở phân phối và bảo quản sản phẩm thủy sản NextFarm",
+  "diachics": "ấp 2 - An Thái Trung - Cái Bè - Tiền Giang",
+  "sdt": "030 2222 1102",
+  "email": "contact@nextfarm.com",
+  "cmnd": "111111111",
+  "mota": "Chuyên bảo quản và vận chuyển sản phẩm thủy sản với tốc độ giao hàng nhanh và quy mô lớn, là đối tác của các nhà bán lẻ hàng đầu Việt Nam"
+}
+
+{
+  "$class": "org.hlfc.qlts.NhaPhanPhoi",
+  "cspp": "resource:org.hlfc.qlts.CoSoPP#csnextfarm",
+  "username": "ppnextfarm",
+  "fullname": "Công ty TNHH NextFarm",
+  "sdt": "030 2222 1102",
+  "email": "contact@nextfarm.com"
+}
+
+
+

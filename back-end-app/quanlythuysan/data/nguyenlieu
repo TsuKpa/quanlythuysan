@@ -1,0 +1,36 @@
+{
+    "$class": "org.hlfc.qlts.NguyenLieu",
+    "idNguyenLieu": "cachep",
+    "tennguyenlieu": "Cá Chép",
+    "ghichu": "Cá chép (tên khoa học là Cyprinus carpio, từ cá chép trong tiếng Hy Lạp nghĩa là mắn con) là một loài cá nước ngọt phổ biến rộng khắp có quan hệ họ hàng xa với cá vàng thông thường và chúng có khả năng lai giống với nhau. "
+ }
+
+{
+    "$class": "org.hlfc.qlts.NguyenLieu",
+    "idNguyenLieu": "cadieuhong",
+    "tennguyenlieu": "Cá Diêu Hồng",
+    "ghichu": "Cá diêu hồng hay cá điêu hồng hay còn gọi là cá rô phi đỏ (danh pháp khoa học: Oreochromis sp.) là một loài cá nước ngọt thuộc họ Cá rô phi (Cichlidae) có nguồn gốc hình thành từ lai tạo. Thuật ngữ diêu hồng hay điêu hồng được xuất phát từ việc dịch từ tiếng Trung Quốc "
+  }
+
+
+{
+    "$class": "org.hlfc.qlts.NguyenLieu",
+    "idNguyenLieu": "calang",
+    "tennguyenlieu": "Cá Lăng",
+    "ghichu": "Họ Cá lăng(danh pháp khoa học: Bagridae) là một họ cá da trơn có nguồn gốc từ châu Phi và châu Á (từ Nhật Bản tới Borneo). Các loài cá trong họ này có các tên gọi chung như cá lăng hay cá bò."
+  }
+
+{
+    "$class": "org.hlfc.qlts.NguyenLieu",
+    "idNguyenLieu": "caro",
+    "tennguyenlieu": "Cá Rô",
+    "ghichu": "Cá rô là một tên gọi thông dụng tại Việt Nam, dùng chung cho một số loài cá thuộc bộ Cá vược, trong đó có nhiều loài thuộc về Chi Cá rô. Ở Việt Nam, thuật ngữ cá rô còn được hiểu là cá rô đồng"
+  }
+
+
+{
+    "$class": "org.hlfc.qlts.NguyenLieu",
+    "idNguyenLieu": "cathu",
+    "tennguyenlieu": "Cá Thu",
+    "ghichu": "Cá thu được ưa thích và đánh bắt nhiều bởi cho nhiều thịt và nhiều dầu cá; chúng cũng được biết đến là loài có khả năng chiến đấu. Cá thu là đối tượng quan trọng trong ngư nghiệp công nghiệp và ngành câu cá giải trí."
+  }

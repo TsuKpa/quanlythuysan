@@ -1,0 +1,162 @@
+
+.container1 {
+  background-color: #8bbabb;
+  padding-bottom: 20px;
+}
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: auto;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center;
+}
+
+
+.title {
+  margin-left: -16px;
+}
+
+
+.example-card {
+  width: 230px;
+  height: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #d2fafb;
+  border-radius: 4px;
+  text-decoration: none;
+  margin: 50px auto 50px auto;
+}
+
+
+.container {
+  margin: 20px auto 50px auto;
+}
+
+.mat-card-content {
+
+}
+
+.mat-card-action {
+  padding-top: 0;
+  background-color: white;
+  margin: 0 -16px -16px -16px !important;
+}
+
+.action-content {
+  padding: 16px;
+}
+
+.mat-card-header-text {
+
+}
+
+
+.grid-container-contact {
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+  grid-gap: 10px;
+  padding-bottom: 50px;
+  background-color: #d2fafb;
+}
+
+.tieudect {
+  grid-column: 2 / span 2;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 50px 50px 0 100px;
+  text-align: center;
+  color: #14868c;
+}
+
+
+.input {
+  grid-column: 2 / span 2;
+  grid-row: 3 / span 1;
+  padding: 0 200px 20px 240px;
+}
+
+::placeholder {
+  color: #5f6769 !important;
+}
+
+
+.send {
+  grid-column: 2 / span 2;
+  grid-row: 4 / span 1;
+  justify-self: center;
+  align-self: center;
+}
+
+.status {
+  float: right;
+  color: #d35656;
+  border: solid #d35656;
+  padding: 5px;
+  font-size: small;
+}
+
+.status1 {
+  float: right;
+  color: #26a69a;
+  border: solid #26a69a;
+  padding: 5px;
+  font-size: small;
+}
+
+.mat-card-header .mat-card-title {
+  color: #14868c !important;
+  font-size: large;
+}
+
+.mat-card-image {
+  height: 177px;
+}
+
+
+@media screen and (max-width: 800px) {
+  .grid-container-contact {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-gap: 1px;
+    padding-bottom: 50px;
+    background-color: #d2fafb;
+  }
+
+  .tieudect {
+    grid-column: 2 / span 2;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 10px 0 10px;
+    text-align: center;
+    color: #14868c;
+  }
+
+
+  .input {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
+    padding: 0 20px 20px 20px;
+  }
+}
+
+.my-pagination /deep/ .ngx-pagination .disabled {
+  color: #fff !important;
+}
+
+.my-pagination /deep/ .ngx-pagination a {
+  color: #fff !important;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+  background: #14868c !important;
+  color: #fff !important;
+}

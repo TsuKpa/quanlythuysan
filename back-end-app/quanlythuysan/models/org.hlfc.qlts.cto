@@ -1,0 +1,462 @@
+
+namespace org.hlfc.qlts
+
+//participant
+participant Anonymous identified by id {
+  o String id
+}
+
+
+abstract participant ToChuc identified by username {
+  o String username
+  o String fullname
+  o String sdt
+  o String email optional
+}
+participant TrangTraiNuoiGiong extends ToChuc {
+  --> TrangTraiNG tt //co trang trai
+}
+
+participant TrangTraiNuoiNguyenLieu extends ToChuc {
+  --> TrangTraiNNL tt //co trang trai
+}
+
+participant NhaCheBien extends ToChuc {
+  --> CoSoCB cscb //co co so
+}
+
+participant NhaPhanPhoi extends ToChuc {
+  --> CoSoPP cspp //co co so
+}
+
+participant NhaBanLe extends ToChuc {
+  --> CoSoBL csbl 
+}
+
+//End participant
+
+
+//asset
+
+abstract asset TrangTrai identified by idTrangTrai {
+  o String idTrangTrai
+  o String tenTrangTrai
+  o String diachitt
+  o String sdt
+  o String email optional
+  o String cmnd //cmnd cua dai dien chu trang trai
+  o String[] ao //so huu cac ao
+  o String mota optional
+}
+
+asset TrangTraiNG extends TrangTrai {
+  --> TrangTraiNuoiGiong owner
+}
+
+
+asset TrangTraiNNL extends TrangTrai {
+  --> TrangTraiNuoiNguyenLieu owner
+}
+
+abstract asset CoSo identified by idcoso {
+  o String idcoso
+  o String tenCoSo
+  o String diachics
+  o String sdt
+  o String email optional
+  o String cmnd //cmnd cua dai dien chu co so
+  o String mota optional
+}
+
+
+asset CoSoCB extends CoSo {
+  --> NhaCheBien owner
+}
+
+
+asset CoSoPP extends CoSo {
+  --> NhaPhanPhoi owner
+}
+
+
+asset CoSoBL extends CoSo {
+  --> NhaBanLe owner
+}
+
+
+asset NguyenLieu identified by idNguyenLieu {
+  o String idNguyenLieu
+  o String tennguyenlieu
+  o String ghichu optional
+}
+
+
+abstract asset Ao identified by idAo {
+  o String idAo
+  o String tenAo
+  o String dientich
+}
+
+asset AoNG extends Ao {
+  --> TrangTraiNG trangtrai
+  --> TrangTraiNuoiGiong owner
+}
+
+asset AoNNL extends Ao {
+  --> TrangTraiNNL trangtrai
+  --> TrangTraiNuoiNguyenLieu owner
+}
+
+enum loaipt {
+  o Tau
+  o Xe
+}
+
+
+asset PhuongTien identified by idpt {
+  o String idpt
+  o loaipt loaipt default = "Xe"
+  o String taitrong
+  o String tenphuongtien
+  o String bienso
+  o String nguoisohuu optional
+}
+
+enum status {
+  o giaidoan_nuoigiong
+  o giaidoan_nuoinguyenlieu
+  o giaidoan_chebien
+  o giaidoan_phanphoi
+  o giaidoan_banle //banle chua duoc nhap
+  o hoantat 
+}
+
+asset SanPhamNoi identified by idSP{
+  o String idSP //cabasa01, catra01
+  o String[] truyxuatnoi //["giaidoan_nuoigiong","giaidoan_nuoinguyenlieu",...] get du lieu cho noi bo
+  --> NguyenLieu nguyenlieu
+  --> TrangTraiNuoiGiong ttng
+  --> TrangTraiNuoiNguyenLieu ttnnl //to chuc tham gia 
+  --> NhaCheBien ncb
+  --> NhaPhanPhoi npp
+  --> NhaBanLe nbl
+  --> ToChuc[] dathem optional //Mang chua cac to chuc da nhap thong tin
+  o status status default= "giaidoan_nuoigiong"
+}
+
+asset SanPhamNgoai identified by idSP{
+  o String idSP //cabasa01, catra01
+  o String[] truyxuatngoai //get du lieu cho end user
+  o String hinhanh
+  o String mota
+  o String title
+  o status status default= "giaidoan_nuoigiong"
+}
+
+
+asset GiaiDoanNuoiGiong identified by idgdng{
+  o String idgdng
+  --> SanPhamNoi sanphamnoi
+  --> SanPhamNgoai sanphamngoai
+  --> NguyenLieu nguyenlieu
+  --> AoNG ao
+  --> TrangTraiNG trangtrai
+  o DateTime tgnuoi
+  o DateTime tgxuatao //bat dau van chuyen
+  --> PhuongTien phuongtien
+  --> TrangTraiNNL trangtrainhan //Noi nhan nuoi thanh nguyen lieu
+  o Integer soluong
+  o String mota //thuc an, thuoc khang sinh,...
+  --> TrangTraiNuoiGiong owner
+}
+
+asset GiaiDoanNuoiNguyenLieu identified by idgdnnl{
+  o String idgdnnl
+  --> SanPhamNoi sanphamnoi
+  --> SanPhamNgoai sanphamngoai
+  --> NguyenLieu nguyenlieu
+  --> AoNNL ao
+  --> TrangTraiNNL trangtrai
+  o DateTime tgnhangiong
+  o DateTime tgxuatao //bat dau van chuyen
+  --> PhuongTien phuongtien
+  --> CoSoCB cscb //Noi nhan nguyen lieu de che bien
+  o Integer soluong
+  o String mota //thuc an, thuoc khang sinh,...
+  --> TrangTraiNuoiNguyenLieu owner
+}
+
+
+asset GiaiDoanCheBien identified by idgdcb{
+  o String idgdcb
+  --> SanPhamNoi sanphamnoi
+  --> SanPhamNgoai sanphamngoai
+  --> NguyenLieu nguyenlieu
+  --> CoSoCB cscb
+  //Thong tin nhan nguyen lieu
+  o Integer soluongnhan
+  o DateTime tgnhannl
+  o String masolonhan
+  o String tennguoinhan
+  //cat tiet fillet
+  o String khoiluongcattiet
+  o String khoiluongrua //1 me rua :10kg/lan
+  o String tgrua //tg rua 1 me tren phut
+  o String tennguoirua //nguoi chiu trach nhiem rua
+  o String nongdo //nong do clorin trong nuoc rua ppm
+  o String nhietdo //nhiet do nuoc rua
+  //lang da, soi ky sinh trung
+  o String khoiluongsoche
+  o String tgbdsoche //tg bat dau so che
+  o String tgktsoche
+  o String tennguoisoche
+  //cap dong
+  o String nhietdocd
+  o String tgcapdong
+  o String tennguoicd // nguoi chiu trach nhiem cap dong
+  //bao goi
+  o String tennccbb //ten nha cung cap bao bi
+  o String soluongbb //so luong bao bi
+  o String loaibb //loai bao bi
+  o String tennguoibg //nguoi chiu trach nhiem bao goi
+  o String masanpham
+  //bao quan
+  o String nhietdobq
+  o DateTime tgxuat //bat dau van chuyen
+  o String soluonggiao
+  o String masologiao
+  o String diadiemgiao
+  --> PhuongTien phuongtien
+  --> CoSoPP cspp //co so nhan lo hang de phan phoi
+  o String tennguoivc //Nguoi chiu trach nhiem van chuyen
+  --> NhaCheBien owner
+}
+
+
+asset GiaiDoanPhanPhoi identified by idgdpp {
+  o String idgdpp
+  --> SanPhamNoi sanphamnoi
+  --> SanPhamNgoai sanphamngoai
+  --> NguyenLieu nguyenlieu
+  --> CoSoPP cspp
+  //Thong tin nhan san pham
+  o Integer soluongnhan
+  o DateTime tgnhan
+  o String masolonhan
+  o String tennguoinhan
+  o String phanloai
+  o String diadiemnhan
+  o String masanpham
+  //Thong tin giao san pham cho nha ban le 
+  o Integer soluonggiao
+  o DateTime tggiao
+  o String masologiao
+  o String tennguoigiao
+  --> PhuongTien phuongtien
+  --> CoSoBL csbl
+  --> NhaPhanPhoi owner
+}
+
+asset GiaiDoanBanLe identified by idgdbl {
+  o String idgdbl
+  --> SanPhamNoi sanphamnoi
+  --> SanPhamNgoai sanphamngoai
+  --> NguyenLieu nguyenlieu
+  --> CoSoBL csbl
+  //Thong tin nhan san pham
+  o Integer soluongnhan
+  o DateTime tgnhan
+  o String masolonhan
+  o String tennguoigiao
+  o String phanloai
+  o String masanpham
+  --> NhaBanLe owner
+}
+
+//End asset
+
+
+transaction TaoSanPham {
+  o String idSP
+  --> NguyenLieu nguyenlieu
+  --> TrangTraiNuoiGiong ttng
+  --> TrangTraiNuoiNguyenLieu ttnnl
+  --> NhaCheBien ncb
+  --> NhaPhanPhoi npp
+  --> NhaBanLe nbl
+  o String mota
+  o String title
+  o String hinhanh
+  o status status
+}
+
+
+event TaoSanPhamEvent {
+  --> SanPhamNgoai sanpham
+}
+
+
+
+
+
+transaction TaoGiaiDoanNuoiGiong {
+  o String idgdng
+  --> SanPhamNoi sanphamnoi
+  --> SanPhamNgoai sanphamngoai
+  --> NguyenLieu nguyenlieu
+  --> AoNG ao
+  --> TrangTraiNG trangtrai
+  o DateTime tgnuoi
+  o DateTime tgxuatao //bat dau van chuyen
+  --> PhuongTien phuongtien
+  --> TrangTrai trangtrainhan //Noi nhan nuoi thanh nguyen lieu
+  o Integer soluong
+  o String mota
+  --> TrangTraiNuoiGiong trangtrainuoigiong
+}
+
+
+event TaoGiaiDoanNuoiGiongEvent {
+    --> SanPhamNgoai sanpham
+}
+
+
+
+transaction TaoGiaiDoanNuoiNguyenLieu {
+  o String idgdnnl
+  --> SanPhamNoi sanphamnoi
+  --> SanPhamNgoai sanphamngoai
+  --> NguyenLieu nguyenlieu
+  --> AoNNL ao
+  --> TrangTraiNNL trangtrai
+  o DateTime tgnhangiong
+  o DateTime tgxuatao //bat dau van chuyen
+  --> PhuongTien phuongtien
+  --> CoSoCB cscb //Noi nhan nguyen lieu de che bien
+  o Integer soluong
+  o String mota //thuc an, thuoc khang sinh,...
+  --> TrangTraiNuoiNguyenLieu trangtrainuoinguyenlieu
+}
+
+
+event TaoGiaiDoanNuoiNguyenLieuEvent {
+  --> SanPhamNgoai sanpham
+}
+
+
+
+
+transaction TaoGiaiDoanCheBien {
+  o String idgdcb
+  --> SanPhamNoi sanphamnoi
+  --> SanPhamNgoai sanphamngoai
+  --> NguyenLieu nguyenlieu
+  --> CoSoCB cscb
+  //Thong tin nhan nguyen lieu
+  o Integer soluongnhan
+  o DateTime tgnhannl
+  o String masolonhan
+  o String tennguoinhan
+  //cat tiet fillet
+  o String khoiluongcattiet
+  o String khoiluongrua //1 me rua :10kg/lan
+  o String tgrua //tg rua 1 me tren phut
+  o String tennguoirua //nguoi chiu trach nhiem rua
+  o String nongdo //nong do clorin trong nuoc rua ppm
+  o String nhietdo //nhiet do nuoc rua
+  //lang da, soi ky sinh trung
+  o String khoiluongsoche
+  o String tgbdsoche //tg bat dau so che
+  o String tgktsoche
+  o String tennguoisoche
+  //cap dong
+  o String nhietdocd
+  o String tgcapdong
+  o String tennguoicd // nguoi chiu trach nhiem cap dong
+  //bao goi
+  o String tennccbb //ten nha cung cap bao bi
+  o String soluongbb //so luong bao bi
+  o String loaibb //loai bao bi
+  o String tennguoibg //nguoi chiu trach nhiem bao goi
+  o String masanpham
+  //bao quan
+  o String nhietdobq
+  o DateTime tgxuat //bat dau van chuyen
+  o String soluonggiao
+  o String masologiao
+  o String diadiemgiao
+  --> PhuongTien phuongtien
+  --> CoSoPP cspp //co so nhan lo hang de phan phoi
+  o String tennguoivc //Nguoi chiu trach nhiem van chuyen
+  --> NhaCheBien nhachebien
+}
+
+
+
+event TaoGiaiDoanCheBienEvent {
+  --> SanPhamNgoai sanpham
+}
+
+
+
+
+
+
+transaction TaoGiaiDoanPhanPhoi {
+  o String idgdpp
+  --> SanPhamNoi sanphamnoi
+  --> SanPhamNgoai sanphamngoai
+  --> NguyenLieu nguyenlieu
+  --> CoSoPP cspp
+  //Thong tin nhan san pham
+  o Integer soluongnhan
+  o DateTime tgnhan
+  o String masolonhan
+  o String tennguoinhan
+  o String phanloai
+  o String diadiemnhan
+  o String masanpham
+  //Thong tin giao san pham cho nha ban le 
+  o Integer soluonggiao
+  o DateTime tggiao
+  o String masologiao
+  o String tennguoigiao
+  --> PhuongTien phuongtien
+  --> CoSoBL csbl
+  --> NhaPhanPhoi nhaphanphoi
+}
+
+event TaoGiaiDoanPhanPhoiEvent {
+  --> SanPhamNgoai sanpham
+}
+
+
+
+
+transaction TaoGiaiDoanBanLe {
+  o String idgdbl
+  --> SanPhamNoi sanphamnoi
+  --> SanPhamNgoai sanphamngoai
+  --> NguyenLieu nguyenlieu
+  --> CoSoBL csbl
+  //Thong tin nhan san pham
+  o Integer soluongnhan
+  o DateTime tgnhan
+  o String masolonhan
+  o String tennguoigiao
+  o String phanloai
+  o String masanpham
+  --> NhaBanLe nhabanle
+}
+
+
+event TaoGiaiDoanBanLeEvent {
+  --> SanPhamNgoai sanpham
+}
+
+
+
+
+//Tao nguoi dung va asset mau
+transaction CreateDemoParticipants {
+}

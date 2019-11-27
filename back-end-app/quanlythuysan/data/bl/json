@@ -1,0 +1,50 @@
+{
+  "$class": "org.hlfc.qlts.CoSoBL",
+  "owner": "org.hlfc.qlts.NhaBanLe#blninhkieu",
+  "idcoso": "csvmnk",
+  "tenCoSo": "VinMart Ninh Kiều",
+  "diachics": "Số 42 Đường 30 Tháng 4, An Lạc, Ninh Kiều, Cần Thơ",
+  "sdt": "0292 6250 646",
+  "email": "cskh@vinmart.com",
+  "cmnd": "23232322",
+  "mota": "Với tầm nhìn dài hạn và mong muốn phát triển bền vững, mang đến cho người tiêu dùng Việt những trải nghiệm mua sắm tiện lợi với nhiều sự lựa chọn về sản phẩm, an tâm về chất lượng, hệ thống VinMart & VinMart+ đã phủ rộng khắp Việt Nam với hơn 108 siêu thị VinMart và 1.700 cửa hàng VinMart+."
+}
+
+{
+  "$class": "org.hlfc.qlts.NhaBanLe",
+  "csbl": "resource:org.hlfc.qlts.CoSoBL#csvmnk",
+  "username": "blninhkieu",
+  "fullname": "VinMart Ninh Kiều",
+  "sdt": "0292 6250 646",
+  "email": "cskh@vinmart.com"
+}
+
+
+
+
+----------------------------------------------------------------------------
+
+
+{
+  "$class": "org.hlfc.qlts.CoSoBL",
+  "owner": "org.hlfc.qlts.NhaBanLe#blcmvl",
+  "idcoso": "cscmvl",
+  "tenCoSo": "Co-op mart Vĩnh Long",
+  "diachics": "26 Ba Tháng Hai, Phường 1, Vĩnh Long",
+  "sdt": "0270 3836 722",
+  "email": "contact@co-opmart.com.vn",
+  "cmnd": "111111111",
+  "mota": "Với lòng tận tâm phục vụ và khát khao vươn lên, Co.opmart khẳng định Thương hiệu siêu thị dẫn đầu tại Việt Nam và phát triển ra khu vực, nhằm đem lại lợi ích tốt nhất cho khách hàng và cộng đồng"
+}
+
+{
+  "$class": "org.hlfc.qlts.NhaBanLe",
+  "csbl": "resource:org.hlfc.qlts.CoSoBL#cscmvl",
+  "username": "blcmvl",
+  "fullname": "Công ty TNHH NextFarm",
+  "sdt": "0270 3836 722",
+  "email": "contact@co-opmart.com.vn"
+}
+
+
+

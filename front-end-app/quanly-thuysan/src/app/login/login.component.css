@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: 35% 30% 35%;
+  margin-bottom: 150px;
+}
+
+.login {
+  grid-column: 2 / span 1;
+  padding: 100px 0 70px 0;
+}
+
+.logo {
+  margin-right: 50px;
+}
+
+.notice {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+
+h3 {
+  margin-left: 50px;
+}

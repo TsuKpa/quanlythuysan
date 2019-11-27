@@ -1,0 +1,203 @@
+<div class="container">
+  <div class="title">
+    <h4>Các giai đoạn truy xuất nguồn gốc đang thực hiện</h4>
+  </div>
+
+  <div class="stepper">
+    <mat-horizontal-stepper labelPosition="bottom" #stepper>
+      <mat-step label="Giai Đoạn Nuôi Con Giống" [editable]="false" [completed]="true"></mat-step>
+      <mat-step label="Giai Đoạn Nuôi Nguyên Liệu" [editable]="false" [completed]="true"></mat-step>
+      <mat-step label="Giai Đoạn Chế Biến" [editable]="false" [completed]="true"></mat-step>
+      <mat-step label="Giai Đoạn Phân Phối" [editable]="false"></mat-step>
+      <mat-step label="Giai Đoạn Bán Lẻ" [editable]="false"></mat-step>
+      <mat-step label="Hoàn Tất" [editable]="false"></mat-step>
+    </mat-horizontal-stepper>
+  </div>
+
+  <div class="gd">
+    <h4>Giai đoạn phân phối</h4>
+  </div>
+
+
+  <mat-progress-spinner color="primary"
+                        mode="indeterminate" *ngIf="isLoading">
+  </mat-progress-spinner>
+
+  <div class="form">
+    <div [hidden]="submitted">
+      <form (ngSubmit)="onSubmit()" class="myform" #ngForm="ngForm">
+
+        <mat-label>ID: <strong>{{idNG}}</strong></mat-label>
+        <table>
+          <tr>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <mat-select placeholder="Nguyên Liệu" [ngModel]="phanphoi.nguyenlieu"
+                              class="form-control" [disabled]="true"
+                              [ngModelOptions]="{standalone: true}">
+                    <mat-option *ngIf="nl" [value]="phanphoi.nguyenlieu">{{nl.tennguyenlieu}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <span>Thông tin nhận sản phẩm</span>
+        <table>
+          <tr>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="number" placeholder="Số lượng nhận (kg)"
+                         required
+                         min="0" name="soluong" [(ngModel)]="phanphoi.soluongnhan">
+                </mat-form-field>
+              </div>
+            </td>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput [matDatepicker]="picker2" placeholder="Thời gian nhận"
+                         [(ngModel)]="phanphoi.tgnhan" class="form-control" required
+                         [ngModelOptions]="{standalone: true}">
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Mã số lô nhận" [(ngModel)]="phanphoi.masolonhan"
+                         class="form-control" required
+                         [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+            </td>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Tên người nhận" [(ngModel)]="phanphoi.tennguoinhan"
+                         class="form-control" required
+                         [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Phân loại"
+                         [(ngModel)]="phanphoi.phanloai" class="form-control" required
+                         [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+            </td>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Địa điểm nhận"
+                         [(ngModel)]="phanphoi.diadiemnhan" class="form-control" required
+                         [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Mã sản phẩm"
+                         [(ngModel)]="id" class="form-control" required
+                         [disabled]="true" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <span>Thông tin giao sản phẩm</span>
+
+        <table>
+          <tr>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="number" placeholder="Số lượng giao (25kg/thùng)"
+                         class="form-control" required
+                         min="0" name="soluong" [(ngModel)]="phanphoi.soluonggiao">
+                </mat-form-field>
+              </div>
+            </td>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput [matDatepicker]="picker1" placeholder="Thời gian giao"
+                         [(ngModel)]="phanphoi.tggiao" class="form-control" required
+                         [ngModelOptions]="{standalone: true}">
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Mã số lô giao"
+                         [(ngModel)]="phanphoi.masologiao" class="form-control" required
+                         [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+            </td>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Tên người giao"
+                         [(ngModel)]="phanphoi.tennguoigiao" class="form-control" required
+                         [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <mat-select placeholder="Phương Tiện" [(ngModel)]="phanphoi.phuongtien"
+                              class="form-control" required [ngModelOptions]="{standalone: true}">
+                    <mat-option *ngFor="let p of pt" [value]="p.idpt">{{p.tenphuongtien}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </td>
+            <td>
+              <div class="formgroup">
+                <mat-form-field>
+                  <mat-select placeholder="Cơ Sở Bán Lẻ Nhận" [(ngModel)]="phanphoi.csbl"
+                              class="form-control" required
+                              [ngModelOptions]="{standalone: true}">
+                    <mat-option *ngFor="let t of cs" [value]="t.idcoso">{{t.tenCoSo}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+
+        <button mat-raised-button type="submit" color="primary" class="btn"
+                [disabled]="!ngForm.valid">Submit
+        </button>
+      </form>
+
+    </div>
+  </div>
+</div>
+

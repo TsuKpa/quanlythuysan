@@ -1,0 +1,36 @@
+<div class="container1">
+  <div class="title">
+    <h2 *ngIf="tt">{{tt.tenTrangTrai}}</h2>
+    <h2 *ngIf="cs">{{cs.tenCoSo}}</h2>
+    <ul id="ul" *ngIf="profile">
+
+      <mat-list-item role="listitem" *ngIf="tt"><strong>SDT: </strong> <br>
+        <span>{{tt.sdt}}</span></mat-list-item>
+
+
+      <mat-list-item role="listitem" *ngIf="cs"><strong>SDT: </strong> <br>
+        <span>{{cs.sdt}}</span></mat-list-item>
+
+
+      <mat-list-item role="listitem" *ngIf="tt"><strong>Địa chỉ: </strong>
+        <br>
+        <span>{{tt.diachitt}}</span></mat-list-item>
+
+      <mat-list-item role="listitem" *ngIf="cs"><strong>Địa chỉ: </strong>
+        <br>
+        <span>{{cs.diachics}}</span></mat-list-item>
+
+      <mat-list-item role="listitem" *ngIf="tt"><strong>Email:</strong> <br>
+        <span>{{tt.email}}</span></mat-list-item>
+      <mat-list-item role="listitem" *ngIf="cs"><strong>Email:</strong> <br>
+        <span>{{cs.email}}</span></mat-list-item>
+
+
+      <mat-list-item role="listitem" *ngIf="tt"><strong>Mô tả:</strong><br>
+        <span>{{tt.mota}}</span></mat-list-item>
+
+      <mat-list-item role="listitem" *ngIf="cs"><strong>Mô tả:</strong><br>
+        <span>{{cs.mota}}</span></mat-list-item>
+    </ul>
+  </div>
+</div>

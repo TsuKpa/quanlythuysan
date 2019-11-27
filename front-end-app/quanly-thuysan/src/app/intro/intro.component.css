@@ -1,0 +1,714 @@
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 15% 20% 20% 20% 20% 5%;
+  grid-gap: 10px;
+  padding-bottom: 50px;
+  background-color: #d2fafb;
+}
+
+.grid-container > div {
+  /* background-color: #2f416d; */
+  text-align: left;
+  align-content: center;
+}
+
+
+.item1 {
+  grid-column: 2 / span 2;
+  grid-row: auto;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 36px;
+  color: #14868c;
+  padding: 50px 50px 0 100px;
+}
+
+.item2 {
+  display: block;
+  grid-column: 4 / span 1;
+  grid-row: 1 / span 3;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+.item3 {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 2;
+  padding: 0 50px 0 100px;
+}
+
+.item4 {
+  grid-row: 3 / span 1;
+  grid-column: 2 / span 2;
+  padding: 20px 70px 0 100px;
+}
+
+/* cau hoi container */
+.grid-container-taisao {
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+  grid-gap: 10px;
+  padding-bottom: 50px;
+  background-color: #ecfcff;
+}
+
+
+.cauhoi {
+  grid-column: 2 / span 2;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 50px 50px 0 100px;
+  text-align: center;
+  color: #14868c;
+}
+
+.tlcauhoi {
+  grid-column: 2 / span 2;
+  font-size: 20px;
+  padding: 0 50px 0 100px;
+  text-align: center;
+}
+
+/**/
+
+/* gt giai doan */
+.grid-container-giaidoan {
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+  grid-gap: 10px;
+  padding-bottom: 50px;
+  background-color: #d2fafb;
+}
+
+.giaidoan {
+  grid-column: 2 / span 2;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 50px 50px 0 100px;
+  text-align: center;
+  color: #14868c;
+}
+
+/* giai doan nuoi giong  */
+.grid-container-nuoigiong {
+  display: grid;
+  grid-template-columns: 15% 20% 20% 20% 20% 5%;
+  grid-gap: 10px;
+  background-color: #ecfcff;
+}
+
+
+.item1ng {
+  display: block;
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 3;
+  padding: 75px 75px 75px 75px;
+}
+
+
+.item2ng {
+  grid-column: 4 / span 2;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 28px;
+  color: #14868c;
+  padding: 125px 100px 0 0;
+}
+
+.item3ng {
+  grid-row: 2 / span 1;
+  grid-column: 4 / span 2;
+  padding: 0 125px 75px 0;
+}
+
+/* nuoi nguyen lieu */
+.grid-container-nguyenlieu {
+  display: grid;
+  grid-template-columns: 15% 20% 20% 20% 20% 5%;
+  grid-gap: 10px;
+  background-color: #d2fafb;
+}
+
+
+.item1nl {
+  font-family: 'Open Sans', serif !important;
+  font-size: 28px;
+  color: #14868c;
+  padding: 125px 25px 0 75px;
+  display: block;
+  grid-column: 2 / span 2;
+}
+
+
+.item2nl {
+  grid-column: 4 / span 2;
+  grid-row: 1 / span 3;
+  font-size: 28px;
+  color: #14868c;
+  padding: 75px 100px 75px 25px;
+}
+
+.item3nl {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 2;
+  padding: 0 25px 75px 75px;
+}
+
+
+/* giai doan che bien  */
+.grid-container-chebien {
+  display: grid;
+  grid-template-columns: 15% 20% 20% 20% 20% 5%;
+  grid-gap: 10px;
+  background-color: #ecfcff;
+}
+
+
+.item1cb {
+  display: block;
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 3;
+  padding: 75px 75px 75px 75px;
+}
+
+
+.item2cb {
+  grid-column: 4 / span 2;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 28px;
+  color: #14868c;
+  padding: 125px 100px 0 0;
+}
+
+.item3cb {
+  grid-row: 2 / span 1;
+  grid-column: 4 / span 2;
+  padding: 0 125px 75px 0;
+}
+
+
+/* phan phoi */
+.grid-container-phanphoi {
+  display: grid;
+  grid-template-columns: 15% 20% 20% 20% 20% 5%;
+  grid-gap: 10px;
+  background-color: #d2fafb;
+}
+
+
+.item1pp {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 28px;
+  color: #14868c;
+  padding: 125px 25px 0 75px;
+  display: block;
+  grid-column: 2 / span 2;
+}
+
+
+.item2pp {
+  grid-column: 4 / span 2;
+  grid-row: 1 / span 3;
+  font-size: 28px;
+  color: #14868c;
+  padding: 75px 100px 75px 25px;
+}
+
+.item3pp {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 2;
+  padding: 0 25px 75px 75px;
+}
+
+
+/* giai doan ban le  */
+.grid-container-banle {
+  display: grid;
+  grid-template-columns: 15% 20% 20% 20% 20% 5%;
+  grid-gap: 10px;
+  background-color: #ecfcff;
+}
+
+
+.item1bl {
+  display: block;
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 3;
+  padding: 75px 75px 75px 75px;
+}
+
+
+.item2bl {
+  grid-column: 4 / span 2;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 28px;
+  color: #14868c;
+  padding: 125px 100px 0 0;
+}
+
+.item3bl {
+  grid-row: 2 / span 1;
+  grid-column: 4 / span 2;
+  padding: 0 125px 75px 0;
+}
+
+/* congnghe */
+.grid-container-congnghe {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-gap: 10px;
+  background-color: #d2fafb;
+}
+
+
+.congnghe {
+  align-self: center;
+  justify-self: center;
+  grid-column: 2 / span 1;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 30px 30px;
+  text-align: center;
+  color: #14868c;
+}
+
+
+/* blockchain */
+.grid-container-blockchain {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-gap: 10px;
+  padding-bottom: 50px;
+  background-color: #ecfcff;
+}
+
+.grid-container-blockchain > div {
+  align-self: center;
+  justify-self: center;
+}
+
+.blockchain {
+  grid-column: 2 / span 1;
+  padding: 75px 125px 25px 125px;
+}
+
+.title-blockchain {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  font-size: 25px;
+}
+
+.des-blockchain {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+  text-align: center;
+}
+
+/* angular */
+.grid-container-frontend {
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+  grid-gap: 10px;
+  padding-bottom: 50px;
+  background-color: #d2fafb;
+}
+
+.grid-container-frontend > div {
+  align-self: center;
+  justify-self: center;
+}
+
+
+.angular {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  padding: 50px 100px 25px 100px;
+}
+
+.title-angular {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  font-size: 25px;
+}
+
+.des-angular {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+  text-align: center;
+}
+
+
+/* nodejs */
+.nodejs {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+  padding: 50px 100px 25px 100px;
+}
+
+
+.title-nodejs {
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+  font-size: 25px;
+}
+
+.des-nodejs {
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 1;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 800px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-gap: 10px;
+    padding-bottom: 50px;
+    background-color: #d2fafb;
+  }
+
+  .grid-container .item1 {
+    font-size: 22px;
+    grid-column: 2 / span 1;
+    grid-row: auto;
+    font-family: 'Open Sans', sans-serif !important;
+    color: #14868c;
+    padding: 40px 20px 0 10px;
+  }
+
+  .grid-container .item2 {
+    grid-column: 3 / span 1;
+    grid-row: auto;
+    max-height: available;
+    max-width: available;
+  }
+
+  .grid-container .item3 {
+    padding-left: 10px;
+    margin-top: -30px;
+  }
+
+  .grid-container .item4 {
+    margin-left: -20px;
+  }
+
+
+  .grid-container-taisao {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-gap: 1px;
+    padding-bottom: 50px;
+    background-color: #ecfcff;
+  }
+
+  .grid-container-taisao .cauhoi {
+    grid-column: 2 / span 2;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 50px 0 0 0;
+    text-align: center;
+    color: #14868c;
+  }
+
+
+  .grid-container-taisao .tlcauhoi {
+    grid-column: 2 / span 2;
+    font-size: 18px;
+    padding: 20px 0 0 0;
+    text-align: center;
+  }
+
+
+  .grid-container-giaidoan {
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-gap: 1px;
+  }
+
+  .grid-container-giaidoan .giaidoan {
+    grid-column: 2 / span 2;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 50px 0 0 0;
+  }
+
+
+  .grid-container-nuoigiong {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-gap: 1px;
+    background-color: #ecfcff;
+  }
+
+
+  .grid-container-nuoigiong .item1ng {
+    display: block;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    padding: 50px 10px 50px 10px;
+  }
+
+
+  .grid-container-nuoigiong .item2ng {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 1;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 18px;
+    color: #14868c;
+    padding: 50px 0 0 10px;
+    margin-bottom: -30px;
+  }
+
+  .grid-container-nuoigiong .item3ng {
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 2;
+    padding: 0 10px 0 10px;
+    font-size: 14px;
+  }
+
+
+  .grid-container-nguyenlieu {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-gap: 1px;
+    background-color: #d2fafb;
+  }
+
+
+  .grid-container-nguyenlieu .item1nl {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 18px;
+    color: #14868c;
+    padding: 50px 0 10px 10px;
+    margin-bottom: 0;
+  }
+
+
+  .grid-container-nguyenlieu .item2nl {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 2;
+    padding: 50px 10px 50px 10px;
+  }
+
+  .grid-container-nguyenlieu .item3nl {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 2;
+    padding: 0 10px 40px 10px;
+    font-size: 14px;
+  }
+
+
+  /* giai doan che bien  */
+  .grid-container-chebien {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-gap: 1px;
+    background-color: #ecfcff;
+  }
+
+
+  .grid-container-chebien .item1cb {
+    display: block;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    padding: 50px 10px 50px 10px;
+  }
+
+
+  .grid-container-chebien .item2cb {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 1;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 18px;
+    color: #14868c;
+    padding: 50px 0 0 10px;
+    margin-bottom: -30px;
+  }
+
+  .grid-container-chebien .item3cb {
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 2;
+    padding: 0 10px 0 10px;
+    font-size: 14px;
+  }
+
+
+  /* phan phoi */
+  .grid-container-phanphoi {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-gap: 1px;
+    background-color: #d2fafb;
+  }
+
+
+  .grid-container-phanphoi .item1pp {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 18px;
+    color: #14868c;
+    padding: 50px 0 10px 10px;
+    margin-bottom: 0;
+  }
+
+
+  .grid-container-phanphoi .item2pp {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 2;
+    padding: 50px 10px 50px 10px;
+  }
+
+  .grid-container-phanphoi .item3pp {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 2;
+    padding: 0 10px 40px 10px;
+    font-size: 14px;
+  }
+
+
+  /* giai doan ban le  */
+  .grid-container-banle {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-gap: 1px;
+    background-color: #ecfcff;
+  }
+
+
+  .grid-container-banle .item1bl {
+    display: block;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    padding: 50px 10px 50px 10px;
+  }
+
+
+  .grid-container-banle .item2bl {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 1;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 18px;
+    color: #14868c;
+    padding: 50px 0 0 10px;
+    margin-bottom: -30px;
+  }
+
+  .grid-container-banle .item3bl {
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 2;
+    padding: 0 10px 0 10px;
+    font-size: 14px;
+  }
+
+  /* congnghe */
+  .grid-container-congnghe {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-gap: 1px;
+    background-color: #d2fafb;
+  }
+
+
+  .congnghe {
+    align-self: center;
+    justify-self: center;
+    grid-column: 2 / span 1;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 10px;
+    text-align: center;
+    color: #14868c;
+  }
+
+
+  /* blockchain */
+  .grid-container-blockchain {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-gap: 1px;
+    padding-bottom: 20px;
+    background-color: #ecfcff;
+  }
+
+
+  .blockchain {
+    grid-column: 2 / span 1;
+    padding: 50px 50px 50px 50px;
+  }
+
+  .title-blockchain {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    font-size: 22px;
+  }
+
+  .des-blockchain {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+    text-align: center;
+  }
+
+
+  /* angular */
+  .grid-container-frontend {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-gap: 1px;
+    padding-bottom: 50px;
+    background-color: #d2fafb;
+  }
+
+  .grid-container-frontend > div {
+    align-self: center;
+    justify-self: center;
+  }
+
+
+  .angular {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    padding: 30px 30px 30px 30px;
+  }
+
+  .title-angular {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+    font-size: 20px;
+  }
+
+  .des-angular {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;
+    text-align: center;
+  }
+
+
+  /* nodejs */
+  .nodejs {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 1;
+    padding: 30px 30px 30px 30px;
+  }
+
+
+  .title-nodejs {
+    grid-column: 3 / span 2;
+    grid-row: 2 / span 1;
+    font-size: 20px;
+  }
+
+  .des-nodejs {
+    grid-column: 3 / span 2;
+    grid-row: 3 / span 1;
+    text-align: center;
+    padding-right: 10px;
+  }
+}

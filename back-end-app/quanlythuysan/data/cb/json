@@ -1,0 +1,49 @@
+{
+  "$class": "org.hlfc.qlts.CoSoCB",
+  "owner": "org.hlfc.qlts.NhaCheBien#cbhungvuong",
+  "idcoso": "cshungvuong",
+  "tenCoSo": "Công ty Cổ Phần Hùng Vương",
+  "diachics": "178 - QL61, Tầm Vu, Thạnh Hòa, Phụng Hiệp, Tỉnh Hậu Giang",
+  "sdt": "+ 84 0711 951.075",
+  "email": "kimhang@vietlongvdco.com",
+  "cmnd": "111111111",
+  "mota": "Được thành lập năm 2003, công ty chúng tôi chuyên về sản xuất thức ăn chăn nuôi thủy sản, nuôi trồng, chế biến và xuất khẩu cá tra, basa với quy mô lớn và hiện đại ở đồng bằng sông Cửu Long. Cơ sở sản xuất của chúng tôi được trang bị máy móc, thiết bị hiện đại bao gồm và nhà máy chế biến cá tra, cá basa xuất khẩu và nhà máy sản xuất thức ăn với dây chuyền sản xuất được nhập từ Châu Âu."
+}
+
+{
+  "$class": "org.hlfc.qlts.NhaCheBien",
+  "cscb": "resource:org.hlfc.qlts.CoSoCB#cshungvuong",
+  "username": "cbhungvuong",
+  "fullname": "Công ty Cổ Phần Hùng Vương",
+  "sdt": "+ 84 0711 951.075",
+  "email": "kimhang@vietlongvdco.com"
+}
+
+
+
+
+----------------------------------------------------------------------------
+
+
+{
+  "$class": "org.hlfc.qlts.CoSoCB",
+  "owner": "org.hlfc.qlts.NhaCheBien#cbcondanh",
+  "idcoso": "cscongdanh",
+  "tenCoSo": "Công ty TNHH Một thành viên sản xuất thương mại thực phẩm Công Danh ",
+  "diachics": "Lô A4-Đường NB, Cụm Nhị Xuân, Xã Xuân Thới Sơn, Hóc Môn, TPHCM",
+  "sdt": " (+84 28) 62545276 ",
+  "email": "contact@congdanh.com",
+  "cmnd": "22222222",
+  "mota": "Công Ty Công Danh chúng tôi đã đồng hành cùng Quý khách hàng trong lĩnh vực nông thủy sản tươi sống trong nhiều năm nay. Chúng tôi ghi nhận và chân thành cám ơn sự tin tưởng, ủng hộ của Quý khách hàng và xem đó một thành công rất lớn của Công ty chúng tôi. Chúng tôi cam kết sẽ liên tục cải thiện năng lực phục vụ của mình nhằm đáp ứng tốt nhât nhu cầu của khách hàng. Hiện nay, Công Ty Công Danh phục vụ tại hầu hết các siêu thị, khu công nghiệp, khu chế xuất TP. HCM, Đồng Nai, Bình Dương, Long An, Tây Ninh v.v.v "
+}
+
+{
+  "$class": "org.hlfc.qlts.NhaCheBien",
+  "cscb": "resource:org.hlfc.qlts.CoSoCB#cscongdanh",
+  "username": "cbcongdanh",
+  "fullname": "Công ty TNHH Một thành viên sản xuất thương mại thực phẩm Công Danh ",
+  "sdt": "(+84 28) 62545276 ",
+  "email": "contact@congdanh.com"
+}
+
+

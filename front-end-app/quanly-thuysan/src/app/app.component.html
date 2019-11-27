@@ -1,0 +1,44 @@
+<div class="header" id="myTopnav">
+    <a routerLink="/intro"><img src="assets/resource/logo.svg" alt="logo" class="logo"></a>
+    <a routerLink="/product" routerLinkActive="selected"
+    [routerLinkActiveOptions]="{exact: true}">Sản Phẩm</a>
+
+    <a routerLink="/about" routerLinkActive="selected">Về Chúng Tôi</a>
+    <a routerLink="/support" routerLinkActive="selected">Hỗ Trợ</a>
+    <a routerLink="/contact" routerLinkActive="selected">Liên Hệ</a>
+
+<!--    <li *ngIf="!auth.isLoggedIn()">-->
+<!--      <a routerLink="/login" routerLinkActive="selected">Đăng Nhập</a>-->
+<!--    </li>-->
+
+  <a class="action">
+      <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="auth.isLoggedIn()">
+        <mat-icon>drag_indicator</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="profile()">
+          <mat-icon>person</mat-icon>
+          <span>Hồ Sơ</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          <span>Login/Logout</span>
+        </button>
+      </mat-menu>
+    </a>
+
+  <a href="javascript:void(0);" class="icon" (click)="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a></div>
+
+
+<router-outlet></router-outlet>
+
+<!-- Footer -->
+<footer class="page-footer">
+  <b>LVFISH Company</b>
+  <div class="footer">
+    Copyright © 2019 All right Reserved.
+  </div>
+</footer>
+<!-- Footer -->

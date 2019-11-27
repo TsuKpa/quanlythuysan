@@ -1,0 +1,43 @@
+<div class="container">
+
+  <div class="login" [hidden]="submitted">
+    <table>
+      <tr>
+        <td><img src="../../assets/resource/logo.svg" alt="logo" class="logo"></td>
+        <td>
+          <form (ngSubmit)="onSubmit()" class="myform" #ngForm="ngForm"
+                enctype="multipart/form-data">
+            <div class="formgroup">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Nhập tên của bạn" class="form-control"
+                       [(ngModel)]="loginForm.username" [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            </div>
+            <div class="formgroup">
+              <button type="button" mat-raised-button matTooltip="vd: user.card"
+                      matTooltipPosition="right" (click)="imgFileInput.click()">Chọn card
+              </button>
+              <label for="card" *ngIf="fileToUpload!=null" style="margin: 10px auto;">
+                {{fileToUpload.name}}
+              </label>
+              <input hidden type="file" id="card" accept=".card" #imgFileInput class="form-control"
+                     (change)="handleFileInput($event.target.files)"/>
+            </div>
+
+            <button mat-raised-button color="primary" type="submit" style="margin-top: 20px;"
+                    [disabled]="!ngForm.valid">Đăng Nhập
+            </button>
+          </form>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="login" *ngIf="isLoading">
+    <div class="notice">
+      <mat-progress-spinner color="primary"
+                            mode="indeterminate">
+      </mat-progress-spinner>
+      <h3>{{status}}</h3>
+    </div>
+  </div>
+</div>

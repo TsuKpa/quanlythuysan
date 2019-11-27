@@ -1,0 +1,92 @@
+<h2>Các cơ sở tham gia truy xuất nguồn gốc sản phẩm<br><span>{{id}}</span>
+<ngx-kjua
+  [text]="'http://192.168.12.1:4200/product-detail/'+id"
+  [renderAsync]="false"
+  [render]="'canvas'"
+  [crisp]="true"
+  [minVersion]="1"
+  [ecLevel]="'H'"
+  [size]="200"
+  [ratio]="undefined"
+  [fill]="'#333'"
+  [back]="'#fff'"
+  [rounded]="100"
+  [quiet]="1"
+  [mode]="'plain'"
+  [mSize]="30"
+  [mPosX]="50"
+  [mPosY]="50"
+  [fontname]="'sans-serif'"
+  [fontcolor]="'#ff9818'"
+  [cssClass]="'image-auto'"
+></ngx-kjua>
+
+</h2>
+
+
+
+
+
+
+<div class="container">
+
+  <div class="timeline-block timeline-block-right" *ngIf="ttng">
+    <div class="marker"></div>
+    <div class="timeline-content">
+      <h3>{{ttng.tenTrangTrai}}</h3>
+      <span>Giai Đoạn Nuôi Con Giống</span>
+      <p>{{ttng.sdt}}</p>
+      <p>{{ttng.diachitt}}</p>
+      <p>{{ttng.mota}}</p>
+      <mat-button-toggle (click)="direct(0)" class="btn-lienhe">Chi Tiết</mat-button-toggle>
+    </div>
+  </div>
+
+  <div class="timeline-block timeline-block-left" *ngIf="ttngl">
+    <div class="marker"></div>
+    <div class="timeline-content">
+      <h3>{{ttngl.tenTrangTrai}}</h3>
+      <span>Giai Đoạn Nuôi Nguyên Liệu</span>
+      <p>{{ttngl.sdt}}</p>
+      <p>{{ttngl.diachitt}}</p>
+      <p>{{ttngl.mota}}</p>
+      <mat-button-toggle (click)="direct(1)" class="btn-lienhe">Chi Tiết</mat-button-toggle>
+    </div>
+  </div>
+
+  <div class="timeline-block timeline-block-right" *ngIf="cscb">
+    <div class="marker"></div>
+    <div class="timeline-content">
+      <h3>{{cscb.tenCoSo}}</h3>
+      <span>Giai Đoạn Chế Biến</span>
+      <p>{{cscb.sdt}}</p>
+      <p>{{cscb.diachics}}</p>
+      <p>{{cscb.mota}}</p>
+      <mat-button-toggle (click)="direct(2)" class="btn-lienhe">Chi Tiết</mat-button-toggle>
+    </div>
+  </div>
+
+  <div class="timeline-block timeline-block-left" *ngIf="cspp">
+    <div class="marker"></div>
+    <div class="timeline-content">
+      <h3>{{cspp.tenCoSo}}</h3>
+      <span>Giai Đoạn Phân Phối</span>
+      <p>{{cspp.sdt}}</p>
+      <p>{{cspp.diachics}}</p>
+      <p>{{cspp.mota}}</p>
+      <mat-button-toggle (click)="direct(3)" class="btn-lienhe">Chi Tiết</mat-button-toggle>
+    </div>
+  </div>
+
+  <div class="timeline-block timeline-block-right" *ngIf="csbl">
+    <div class="marker"></div>
+    <div class="timeline-content">
+      <h3>{{csbl.tenCoSo}}</h3>
+      <span>Giai Đoạn Bán Lẻ</span>
+      <p>{{csbl.sdt}}</p>
+      <p>{{csbl.diachics}}</p>
+      <p>{{csbl.mota}}</p>
+      <mat-button-toggle (click)="direct(4)" class="btn-lienhe">Chi Tiết</mat-button-toggle>
+    </div>
+  </div>
+</div>

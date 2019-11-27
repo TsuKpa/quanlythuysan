@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="title">
+  <h4>Các giai đoạn truy xuất nguồn gốc đang thực hiện</h4>
+  </div>
+
+  <div class="stepper">
+  <mat-horizontal-stepper labelPosition="bottom" #stepper>
+    <mat-step label="Giai Đoạn Nuôi Con Giống" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Nuôi Nguyên Liệu" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Chế Biến" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Phân Phối" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Giai Đoạn Bán Lẻ" [editable]="false" [completed]="true"></mat-step>
+    <mat-step label="Hoàn Tất" [editable]="false" [completed]="true"></mat-step>
+  </mat-horizontal-stepper>
+  </div>
+
+  <div class="gd">
+  <h4>Chi tiết giai đoạn bán lẻ</h4>
+  </div>
+
+
+</div>
+<div class="container1">
+  <div class="title">
+
+
+
+
+    <mat-list role="list" *ngIf="banle">
+      <mat-list-item role="listitem" *ngIf="nl"><strong>Nguyên liệu:</strong> <span>{{nl.tennguyenlieu}}</span></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem" *ngIf="csbl"><strong>Cơ sở bán lẻ:</strong> <span>{{csbl.tenCoSo}}</span></mat-list-item>
+      <mat-divider></mat-divider>
+
+      <br>
+      <mat-accordion [multi]="true">
+        <mat-expansion-panel expanded>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Thông tin nhận sản phẩm
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list-item role="listitem"><strong>Số lượng nhận (kg):</strong> <span>{{banle.soluongnhan}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Thời gian nhận:</strong> <span>{{tgnhan}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Mã số lô nhận:</strong> <span>{{banle.masolonhan}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Tên người giao:</strong> <span>{{banle.tennguoigiao}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Phân loại:</strong> <span>{{banle.phanloai}}</span></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem"><strong>Mã sản phẩm:</strong> <span>{{banle.masanpham}}</span></mat-list-item>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+
+
+    </mat-list>
+  </div>
+</div>
