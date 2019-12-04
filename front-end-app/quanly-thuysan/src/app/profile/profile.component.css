@@ -40,3 +40,25 @@ span {
 #ul > mat-list-item {
   margin: 20px;
 }
+
+
+@media screen and (max-width: 800px) {
+  .container1 {
+    display: grid;
+    font-size: 14px;
+    grid-template-columns: 5% 90% 5%;
+    margin-bottom: 80px;
+  }
+
+  .title {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    padding: 0 0 10px 10px;
+  }
+
+  #ul > mat-list-item {
+    margin: 10px;
+  }
+
+
+}

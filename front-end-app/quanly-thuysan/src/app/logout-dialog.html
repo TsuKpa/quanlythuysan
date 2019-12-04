@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Thông báo</h1>
+<div mat-dialog-content>
+  <p>Đăng xuất khỏi hệ thống sẽ bao gồm tải về card mới cho lần sử dụng tiếp theo. Đồng ý đăng xuất?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Hủy</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data.title" style="margin-left: 20px">
+    OK
+  </button>
+</div>

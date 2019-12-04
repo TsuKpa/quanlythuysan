@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent, LogoutDialog, NoticeDialog1} from './app.component';
 import { IntroComponent } from './intro/intro.component';
 import { AppRoutingModule } from './app-routing.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
-import {NoticeDialog, ProductComponent} from './product/product.component';
+import { NoticeDialog, ProductComponent} from './product/product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
@@ -67,6 +67,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     BanleDetailComponent,
     NotFoundComponent,
     NoticeDialog,
+    NoticeDialog1,
+    LogoutDialog,
     ProfileComponent,
     SupportComponent
   ],
@@ -103,7 +105,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     { provide: APP_BASE_HREF, useValue : '/' }
   ],
   entryComponents: [
-    NoticeDialog,
+    NoticeDialog, NoticeDialog1, LogoutDialog
   ],
   bootstrap: [AppComponent]
 })

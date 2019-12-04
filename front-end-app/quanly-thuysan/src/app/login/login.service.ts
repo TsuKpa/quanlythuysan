@@ -14,7 +14,7 @@ export class LoginService {
   private pingURL = 'http://192.168.184.158:3000/api/system/ping';
   private deleteURL = 'http://192.168.184.158:3000/api/wallet';
   private identityURL: 'http://192.168.184.158:3000/api/system/identities';
-  public redirectUrl: string;
+
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -36,6 +36,10 @@ export class LoginService {
 
   checkWallet(){
     return this.http.get(`${this.checkURL}`, {withCredentials: true}).toPromise();
+  }
+
+  exportCard(name){
+    return this.http.get(`${this.deleteURL}/${name}/export`, {withCredentials: true, responseType: 'blob'}).toPromise();
   }
 
   deleteCard(name){

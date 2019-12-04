@@ -23,3 +23,33 @@
 h3 {
   margin-left: 50px;
 }
+
+@media screen and (max-width: 800px) {
+	.container {
+	  display: grid;
+	  grid-template-columns: 1% 98% 1%;
+	  margin-bottom: 150px;
+	}
+
+	.login {
+	  grid-column: 2 / span 1;
+	  padding: 100px 30px 70px 0;
+	}
+
+	.logo {
+	  margin-right: 15px;
+	}
+
+	.notice {
+	  padding: 50px;
+	  display: flex;
+	  justify-content: center;
+	}
+
+
+	h3 {
+	  margin-left: 50px;
+	}
+}
+
+

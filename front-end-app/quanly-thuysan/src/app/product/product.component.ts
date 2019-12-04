@@ -35,17 +35,16 @@ export class ProductComponent implements OnInit {
 
     this.myWebSocket.asObservable().subscribe(dataFromServer => {
       this.assetsService.getSPN(dataFromServer['sanpham'].split('#')[1]).subscribe(spnew => {
-          if (dataFromServer['$class']!=='org.hlfc.qlts.TaoSanPhamEvent'){
+        if (dataFromServer['$class'] !== 'org.hlfc.qlts.TaoSanPhamEvent') {
           this.spns.forEach((i) => {
             if (i['idSP'] == dataFromServer['sanpham'].split('#')[1]) {
               this.spns.splice(this.spns.indexOf(i), 1);
               this.spns.push(spnew);
             }
           });
-          }
-          else {
-            this.spns.push(spnew);
-          }
+        } else {
+          this.spns.push(spnew);
+        }
       });
       //console.log(this.spns);
       //console.log(dataFromServer);
@@ -72,8 +71,17 @@ export class ProductComponent implements OnInit {
           }
         });
       }, error => {
-        if (error.status == 401){
+        console.log(error);
+        if (error.status == 401) {
           this.router.navigate(['/login']);
+        } else if (error.error.error.message === 'A business network card has not been specified'){
+          const dialogRef = this.dialog.open(NoticeDialog, {
+            width: '250px',
+            data: {title: 'Vui lòng đăng nhập để thêm thông tin!'}
+          });
+          dialogRef.afterClosed().subscribe(result => {
+            this.router.navigate(['/login']);
+          });
         }
       });
     } else if (status == 'giaidoan_nuoinguyenlieu') {
@@ -90,8 +98,16 @@ export class ProductComponent implements OnInit {
           }
         });
       }, error => {
-        if (error.status == 401){
+        if (error.status == 401) {
           this.router.navigate(['/login']);
+        } else if (error.error.error.message === 'A business network card has not been specified'){
+          const dialogRef = this.dialog.open(NoticeDialog, {
+            width: '250px',
+            data: {title: 'Vui lòng đăng nhập để thêm thông tin!'}
+          });
+          dialogRef.afterClosed().subscribe(result => {
+            this.router.navigate(['/login']);
+          });
         }
       });
     } else if (status == 'giaidoan_chebien') {
@@ -108,8 +124,16 @@ export class ProductComponent implements OnInit {
           }
         });
       }, error => {
-        if (error.status == 401){
+        if (error.status == 401) {
           this.router.navigate(['/login']);
+        }else if (error.error.error.message === 'A business network card has not been specified'){
+          const dialogRef = this.dialog.open(NoticeDialog, {
+            width: '250px',
+            data: {title: 'Vui lòng đăng nhập để thêm thông tin!'}
+          });
+          dialogRef.afterClosed().subscribe(result => {
+            this.router.navigate(['/login']);
+          });
         }
       });
     } else if (status == 'giaidoan_phanphoi') {
@@ -126,8 +150,16 @@ export class ProductComponent implements OnInit {
           }
         });
       }, error => {
-        if (error.status == 401){
+        if (error.status == 401) {
           this.router.navigate(['/login']);
+        }else if (error.error.error.message === 'A business network card has not been specified'){
+          const dialogRef = this.dialog.open(NoticeDialog, {
+            width: '250px',
+            data: {title: 'Vui lòng đăng nhập để thêm thông tin!'}
+          });
+          dialogRef.afterClosed().subscribe(result => {
+            this.router.navigate(['/login']);
+          });
         }
       });
     } else if (status == 'giaidoan_banle') {
@@ -144,8 +176,16 @@ export class ProductComponent implements OnInit {
           }
         });
       }, error => {
-        if (error.status == 401){
+        if (error.status == 401) {
           this.router.navigate(['/login']);
+        }else if (error.error.error.message === 'A business network card has not been specified'){
+          const dialogRef = this.dialog.open(NoticeDialog, {
+            width: '250px',
+            data: {title: 'Vui lòng đăng nhập để thêm thông tin!'}
+          });
+          dialogRef.afterClosed().subscribe(result => {
+            this.router.navigate(['/login']);
+          });
         }
       });
     }
@@ -153,22 +193,21 @@ export class ProductComponent implements OnInit {
 
   onSubmit() {
     if (this.productName != null && this.productName != '') {
-      this.spns = [];
-      this.assetsService.getSPN(this.productName).subscribe(s => {
+      this.assetsService.getSPN(this.productName.toLowerCase()).subscribe(s => {
+        this.spns = [];
         this.spns.push(s);
       }, error => {
-        this.assetsService.getSPNList().subscribe(spns => {
-          this.spns = spns;
-        });
-      });
-    }
-    else {
-      this.assetsService.getSPNList().subscribe(spns => {
-        this.spns = spns;
+        //console.log(error);
+      if (error.status == 404){
+          const dialogRef = this.dialog.open(NoticeDialog, {
+            width: '250px',
+            data: {title: 'Không tìm thấy sản phẩm vui lòng kiểm tra lại!'}
+          });
+        }
+
       });
     }
   }
-
 
 }
 
@@ -191,5 +230,6 @@ export class NoticeDialog {
 }
 
 export interface DialogData {
+  logout: string;
   title: string;
 }
